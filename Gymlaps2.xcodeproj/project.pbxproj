@@ -1,0 +1,320 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B37EF7E214DED6DB001A5C03 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B37EF7E114DED6DB001A5C03 /* UIKit.framework */; };
+		B37EF7E414DED6DB001A5C03 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B37EF7E314DED6DB001A5C03 /* Foundation.framework */; };
+		B37EF7E614DED6DB001A5C03 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B37EF7E514DED6DB001A5C03 /* CoreGraphics.framework */; };
+		B37EF7E814DED6DB001A5C03 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B37EF7E714DED6DB001A5C03 /* CoreData.framework */; };
+		B37EF7EE14DED6DB001A5C03 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B37EF7EC14DED6DB001A5C03 /* InfoPlist.strings */; };
+		B37EF7F014DED6DB001A5C03 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B37EF7EF14DED6DB001A5C03 /* main.m */; };
+		B37EF7F414DED6DB001A5C03 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B37EF7F314DED6DB001A5C03 /* AppDelegate.m */; };
+		B37EF7F714DED6DB001A5C03 /* Gymlaps2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B37EF7F514DED6DB001A5C03 /* Gymlaps2.xcdatamodeld */; };
+		B37EF7FA14DED6DB001A5C03 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B37EF7F914DED6DB001A5C03 /* MainViewController.m */; };
+		B37EF7FD14DED6DB001A5C03 /* FlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B37EF7FC14DED6DB001A5C03 /* FlipsideViewController.m */; };
+		B37EF80014DED6DB001A5C03 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B37EF7FE14DED6DB001A5C03 /* MainViewController.xib */; };
+		B37EF80314DED6DB001A5C03 /* FlipsideViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B37EF80114DED6DB001A5C03 /* FlipsideViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		B37EF7DD14DED6DB001A5C03 /* Gymlaps2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gymlaps2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B37EF7E114DED6DB001A5C03 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		B37EF7E314DED6DB001A5C03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B37EF7E514DED6DB001A5C03 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		B37EF7E714DED6DB001A5C03 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		B37EF7EB14DED6DB001A5C03 /* Gymlaps2-Info.plist */ = {isa = PBXFileReference; path = "Gymlaps2-Info.plist"; sourceTree = "<group>"; };
+		B37EF7ED14DED6DB001A5C03 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B37EF7EF14DED6DB001A5C03 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B37EF7F114DED6DB001A5C03 /* Gymlaps2-Prefix.pch */ = {isa = PBXFileReference; path = "Gymlaps2-Prefix.pch"; sourceTree = "<group>"; };
+		B37EF7F214DED6DB001A5C03 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		B37EF7F314DED6DB001A5C03 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B37EF7F614DED6DB001A5C03 /* Gymlaps2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Gymlaps2.xcdatamodel; sourceTree = "<group>"; };
+		B37EF7F814DED6DB001A5C03 /* MainViewController.h */ = {isa = PBXFileReference; path = MainViewController.h; sourceTree = "<group>"; };
+		B37EF7F914DED6DB001A5C03 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		B37EF7FB14DED6DB001A5C03 /* FlipsideViewController.h */ = {isa = PBXFileReference; path = FlipsideViewController.h; sourceTree = "<group>"; };
+		B37EF7FC14DED6DB001A5C03 /* FlipsideViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlipsideViewController.m; sourceTree = "<group>"; };
+		B37EF7FF14DED6DB001A5C03 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainViewController.xib; sourceTree = "<group>"; };
+		B37EF80214DED6DB001A5C03 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FlipsideViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B37EF7DA14DED6DB001A5C03 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B37EF7E214DED6DB001A5C03 /* UIKit.framework in Frameworks */,
+				B37EF7E414DED6DB001A5C03 /* Foundation.framework in Frameworks */,
+				B37EF7E614DED6DB001A5C03 /* CoreGraphics.framework in Frameworks */,
+				B37EF7E814DED6DB001A5C03 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B37EF7D214DED6DB001A5C03 = {
+			isa = PBXGroup;
+			children = (
+				B37EF7E914DED6DB001A5C03 /* Gymlaps2 */,
+				B37EF7E014DED6DB001A5C03 /* Frameworks */,
+				B37EF7DE14DED6DB001A5C03 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B37EF7DE14DED6DB001A5C03 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B37EF7DD14DED6DB001A5C03 /* Gymlaps2.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B37EF7E014DED6DB001A5C03 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B37EF7E114DED6DB001A5C03 /* UIKit.framework */,
+				B37EF7E314DED6DB001A5C03 /* Foundation.framework */,
+				B37EF7E514DED6DB001A5C03 /* CoreGraphics.framework */,
+				B37EF7E714DED6DB001A5C03 /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B37EF7E914DED6DB001A5C03 /* Gymlaps2 */ = {
+			isa = PBXGroup;
+			children = (
+				B37EF7F214DED6DB001A5C03 /* AppDelegate.h */,
+				B37EF7F314DED6DB001A5C03 /* AppDelegate.m */,
+				B37EF7F814DED6DB001A5C03 /* MainViewController.h */,
+				B37EF7F914DED6DB001A5C03 /* MainViewController.m */,
+				B37EF7FB14DED6DB001A5C03 /* FlipsideViewController.h */,
+				B37EF7FC14DED6DB001A5C03 /* FlipsideViewController.m */,
+				B37EF7FE14DED6DB001A5C03 /* MainViewController.xib */,
+				B37EF80114DED6DB001A5C03 /* FlipsideViewController.xib */,
+				B37EF7F514DED6DB001A5C03 /* Gymlaps2.xcdatamodeld */,
+				B37EF7EA14DED6DB001A5C03 /* Supporting Files */,
+			);
+			path = Gymlaps2;
+			sourceTree = "<group>";
+		};
+		B37EF7EA14DED6DB001A5C03 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B37EF7EB14DED6DB001A5C03 /* Gymlaps2-Info.plist */,
+				B37EF7EC14DED6DB001A5C03 /* InfoPlist.strings */,
+				B37EF7EF14DED6DB001A5C03 /* main.m */,
+				B37EF7F114DED6DB001A5C03 /* Gymlaps2-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B37EF7DC14DED6DB001A5C03 /* Gymlaps2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B37EF80614DED6DB001A5C03 /* Build configuration list for PBXNativeTarget "Gymlaps2" */;
+			buildPhases = (
+				B37EF7D914DED6DB001A5C03 /* Sources */,
+				B37EF7DA14DED6DB001A5C03 /* Frameworks */,
+				B37EF7DB14DED6DB001A5C03 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Gymlaps2;
+			productName = Gymlaps2;
+			productReference = B37EF7DD14DED6DB001A5C03 /* Gymlaps2.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B37EF7D414DED6DB001A5C03 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = B37EF7D714DED6DB001A5C03 /* Build configuration list for PBXProject "Gymlaps2" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = B37EF7D214DED6DB001A5C03;
+			productRefGroup = B37EF7DE14DED6DB001A5C03 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B37EF7DC14DED6DB001A5C03 /* Gymlaps2 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B37EF7DB14DED6DB001A5C03 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B37EF7EE14DED6DB001A5C03 /* InfoPlist.strings in Resources */,
+				B37EF80014DED6DB001A5C03 /* MainViewController.xib in Resources */,
+				B37EF80314DED6DB001A5C03 /* FlipsideViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B37EF7D914DED6DB001A5C03 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B37EF7F014DED6DB001A5C03 /* main.m in Sources */,
+				B37EF7F414DED6DB001A5C03 /* AppDelegate.m in Sources */,
+				B37EF7F714DED6DB001A5C03 /* Gymlaps2.xcdatamodeld in Sources */,
+				B37EF7FA14DED6DB001A5C03 /* MainViewController.m in Sources */,
+				B37EF7FD14DED6DB001A5C03 /* FlipsideViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B37EF7EC14DED6DB001A5C03 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B37EF7ED14DED6DB001A5C03 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		B37EF7FE14DED6DB001A5C03 /* MainViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B37EF7FF14DED6DB001A5C03 /* en */,
+			);
+			name = MainViewController.xib;
+			sourceTree = "<group>";
+		};
+		B37EF80114DED6DB001A5C03 /* FlipsideViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B37EF80214DED6DB001A5C03 /* en */,
+			);
+			name = FlipsideViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B37EF80414DED6DB001A5C03 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		B37EF80514DED6DB001A5C03 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B37EF80714DED6DB001A5C03 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Gymlaps2/Gymlaps2-Prefix.pch";
+				INFOPLIST_FILE = "Gymlaps2/Gymlaps2-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		B37EF80814DED6DB001A5C03 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Gymlaps2/Gymlaps2-Prefix.pch";
+				INFOPLIST_FILE = "Gymlaps2/Gymlaps2-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B37EF7D714DED6DB001A5C03 /* Build configuration list for PBXProject "Gymlaps2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B37EF80414DED6DB001A5C03 /* Debug */,
+				B37EF80514DED6DB001A5C03 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B37EF80614DED6DB001A5C03 /* Build configuration list for PBXNativeTarget "Gymlaps2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B37EF80714DED6DB001A5C03 /* Debug */,
+				B37EF80814DED6DB001A5C03 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B37EF7F514DED6DB001A5C03 /* Gymlaps2.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B37EF7F614DED6DB001A5C03 /* Gymlaps2.xcdatamodel */,
+			);
+			currentVersion = B37EF7F614DED6DB001A5C03 /* Gymlaps2.xcdatamodel */;
+			path = Gymlaps2.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = B37EF7D414DED6DB001A5C03 /* Project object */;
+}
