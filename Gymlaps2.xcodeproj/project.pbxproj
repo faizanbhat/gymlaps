@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B332E84514E0CAF4006FC0D7 /* Timer.m in Sources */ = {isa = PBXBuildFile; fileRef = B332E84414E0CAF3006FC0D7 /* Timer.m */; };
+		B332E84714E0DBA6006FC0D7 /* IntervalTwoPickerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B332E84614E0DBA6006FC0D7 /* IntervalTwoPickerController.xib */; };
+		B356CFD414DF3DF9007389CC /* IntervalPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = B356CFD214DF3DF9007389CC /* IntervalPickerController.m */; };
+		B356CFD514DF3DF9007389CC /* IntervalOnePickerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B356CFD314DF3DF9007389CC /* IntervalOnePickerController.xib */; };
+		B356CFD914DF3E06007389CC /* LapsPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = B356CFD714DF3E06007389CC /* LapsPickerController.m */; };
+		B356CFDA14DF3E06007389CC /* LapsPickerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B356CFD814DF3E06007389CC /* LapsPickerController.xib */; };
+		B356CFDE14DF3E1D007389CC /* BeepModePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = B356CFDC14DF3E1D007389CC /* BeepModePickerController.m */; };
+		B356CFDF14DF3E1D007389CC /* BeepModePickerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B356CFDD14DF3E1D007389CC /* BeepModePickerController.xib */; };
+		B356CFE314DF3E27007389CC /* AlarmModePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = B356CFE114DF3E27007389CC /* AlarmModePickerController.m */; };
+		B356CFE414DF3E27007389CC /* AlarmModePickerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B356CFE214DF3E27007389CC /* AlarmModePickerController.xib */; };
 		B37EF7E214DED6DB001A5C03 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B37EF7E114DED6DB001A5C03 /* UIKit.framework */; };
 		B37EF7E414DED6DB001A5C03 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B37EF7E314DED6DB001A5C03 /* Foundation.framework */; };
 		B37EF7E614DED6DB001A5C03 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B37EF7E514DED6DB001A5C03 /* CoreGraphics.framework */; };
@@ -19,27 +29,106 @@
 		B37EF7FD14DED6DB001A5C03 /* FlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B37EF7FC14DED6DB001A5C03 /* FlipsideViewController.m */; };
 		B37EF80014DED6DB001A5C03 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B37EF7FE14DED6DB001A5C03 /* MainViewController.xib */; };
 		B37EF80314DED6DB001A5C03 /* FlipsideViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B37EF80114DED6DB001A5C03 /* FlipsideViewController.xib */; };
+		B37EF81014DEDA14001A5C03 /* TouchableLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B37EF80F14DEDA14001A5C03 /* TouchableLabel.m */; };
+		B37EF81314DEDA8A001A5C03 /* SoundEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = B37EF81214DEDA8A001A5C03 /* SoundEffect.m */; };
+		B37EF81B14DEDD4F001A5C03 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B37EF81A14DEDD4F001A5C03 /* AudioToolbox.framework */; };
+		B37EF82014DF2A6E001A5C03 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B37EF81D14DF2A6E001A5C03 /* icon.png */; };
+		B37EF82114DF2A6E001A5C03 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B37EF81E14DF2A6E001A5C03 /* icon@2x.png */; };
+		B37EF82214DF2A6E001A5C03 /* interface.png in Resources */ = {isa = PBXBuildFile; fileRef = B37EF81F14DF2A6E001A5C03 /* interface.png */; };
+		B37EF82E14DF2A90001A5C03 /* BH.caf in Resources */ = {isa = PBXBuildFile; fileRef = B37EF82914DF2A90001A5C03 /* BH.caf */; };
+		B37EF82F14DF2A90001A5C03 /* Bottle.caf in Resources */ = {isa = PBXBuildFile; fileRef = B37EF82A14DF2A90001A5C03 /* Bottle.caf */; };
+		B37EF83014DF2A90001A5C03 /* Click.caf in Resources */ = {isa = PBXBuildFile; fileRef = B37EF82B14DF2A90001A5C03 /* Click.caf */; };
+		B37EF83114DF2A90001A5C03 /* End.caf in Resources */ = {isa = PBXBuildFile; fileRef = B37EF82C14DF2A90001A5C03 /* End.caf */; };
+		B37EF83214DF2A90001A5C03 /* Start.caf in Resources */ = {isa = PBXBuildFile; fileRef = B37EF82D14DF2A90001A5C03 /* Start.caf */; };
+		B37EF83414DF2AB6001A5C03 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B37EF83314DF2AB6001A5C03 /* Default@2x.png */; };
+		B37EF83814DF2AD8001A5C03 /* button_i.png in Resources */ = {isa = PBXBuildFile; fileRef = B37EF83514DF2AD8001A5C03 /* button_i.png */; };
+		B37EF83914DF2AD8001A5C03 /* button_r.png in Resources */ = {isa = PBXBuildFile; fileRef = B37EF83614DF2AD8001A5C03 /* button_r.png */; };
+		B37EF83A14DF2AD8001A5C03 /* button_s.png in Resources */ = {isa = PBXBuildFile; fileRef = B37EF83714DF2AD8001A5C03 /* button_s.png */; };
+		B37EF85114DF2E91001A5C03 /* Blue.png in Resources */ = {isa = PBXBuildFile; fileRef = B37EF84614DF2E91001A5C03 /* Blue.png */; };
+		B37EF85214DF2E91001A5C03 /* Blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B37EF84714DF2E91001A5C03 /* Blue@2x.png */; };
+		B37EF85314DF2E91001A5C03 /* MKInfoPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = B37EF84914DF2E91001A5C03 /* MKInfoPanel.m */; };
+		B37EF85414DF2E91001A5C03 /* MKInfoPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = B37EF84A14DF2E91001A5C03 /* MKInfoPanel.xib */; };
+		B37EF85514DF2E91001A5C03 /* Red.png in Resources */ = {isa = PBXBuildFile; fileRef = B37EF84B14DF2E91001A5C03 /* Red.png */; };
+		B37EF85614DF2E91001A5C03 /* Red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B37EF84C14DF2E91001A5C03 /* Red@2x.png */; };
+		B37EF85714DF2E91001A5C03 /* Tick.png in Resources */ = {isa = PBXBuildFile; fileRef = B37EF84D14DF2E91001A5C03 /* Tick.png */; };
+		B37EF85814DF2E91001A5C03 /* Tick@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B37EF84E14DF2E91001A5C03 /* Tick@2x.png */; };
+		B37EF85914DF2E91001A5C03 /* Warning.png in Resources */ = {isa = PBXBuildFile; fileRef = B37EF84F14DF2E91001A5C03 /* Warning.png */; };
+		B37EF85A14DF2E91001A5C03 /* Warning@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B37EF85014DF2E91001A5C03 /* Warning@2x.png */; };
+		B37EF85C14DF302B001A5C03 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B37EF85B14DF302B001A5C03 /* QuartzCore.framework */; };
+		B3FFA58814E13D5E00FECE03 /* JWFolders.m in Sources */ = {isa = PBXBuildFile; fileRef = B3FFA58314E13D5E00FECE03 /* JWFolders.m */; };
+		B3FFA58914E13D5E00FECE03 /* UIScreen+Scale.m in Sources */ = {isa = PBXBuildFile; fileRef = B3FFA58514E13D5E00FECE03 /* UIScreen+Scale.m */; };
+		B3FFA58A14E13D5E00FECE03 /* UIView+Screenshot.m in Sources */ = {isa = PBXBuildFile; fileRef = B3FFA58714E13D5E00FECE03 /* UIView+Screenshot.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B332E84314E0CAF3006FC0D7 /* Timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Timer.h; sourceTree = "<group>"; };
+		B332E84414E0CAF3006FC0D7 /* Timer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Timer.m; sourceTree = "<group>"; };
+		B332E84614E0DBA6006FC0D7 /* IntervalTwoPickerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IntervalTwoPickerController.xib; sourceTree = "<group>"; };
+		B356CFD114DF3DF9007389CC /* IntervalPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntervalPickerController.h; sourceTree = "<group>"; };
+		B356CFD214DF3DF9007389CC /* IntervalPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntervalPickerController.m; sourceTree = "<group>"; };
+		B356CFD314DF3DF9007389CC /* IntervalOnePickerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IntervalOnePickerController.xib; sourceTree = "<group>"; };
+		B356CFD614DF3E06007389CC /* LapsPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LapsPickerController.h; sourceTree = "<group>"; };
+		B356CFD714DF3E06007389CC /* LapsPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LapsPickerController.m; sourceTree = "<group>"; };
+		B356CFD814DF3E06007389CC /* LapsPickerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LapsPickerController.xib; sourceTree = "<group>"; };
+		B356CFDB14DF3E1D007389CC /* BeepModePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeepModePickerController.h; sourceTree = "<group>"; };
+		B356CFDC14DF3E1D007389CC /* BeepModePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeepModePickerController.m; sourceTree = "<group>"; };
+		B356CFDD14DF3E1D007389CC /* BeepModePickerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BeepModePickerController.xib; sourceTree = "<group>"; };
+		B356CFE014DF3E27007389CC /* AlarmModePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmModePickerController.h; sourceTree = "<group>"; };
+		B356CFE114DF3E27007389CC /* AlarmModePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmModePickerController.m; sourceTree = "<group>"; };
+		B356CFE214DF3E27007389CC /* AlarmModePickerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlarmModePickerController.xib; sourceTree = "<group>"; };
 		B37EF7DD14DED6DB001A5C03 /* Gymlaps2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gymlaps2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B37EF7E114DED6DB001A5C03 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B37EF7E314DED6DB001A5C03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B37EF7E514DED6DB001A5C03 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		B37EF7E714DED6DB001A5C03 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		B37EF7EB14DED6DB001A5C03 /* Gymlaps2-Info.plist */ = {isa = PBXFileReference; path = "Gymlaps2-Info.plist"; sourceTree = "<group>"; };
+		B37EF7EB14DED6DB001A5C03 /* Gymlaps2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Gymlaps2-Info.plist"; sourceTree = "<group>"; };
 		B37EF7ED14DED6DB001A5C03 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B37EF7EF14DED6DB001A5C03 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		B37EF7F114DED6DB001A5C03 /* Gymlaps2-Prefix.pch */ = {isa = PBXFileReference; path = "Gymlaps2-Prefix.pch"; sourceTree = "<group>"; };
-		B37EF7F214DED6DB001A5C03 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		B37EF7F114DED6DB001A5C03 /* Gymlaps2-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Gymlaps2-Prefix.pch"; sourceTree = "<group>"; };
+		B37EF7F214DED6DB001A5C03 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B37EF7F314DED6DB001A5C03 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B37EF7F614DED6DB001A5C03 /* Gymlaps2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Gymlaps2.xcdatamodel; sourceTree = "<group>"; };
-		B37EF7F814DED6DB001A5C03 /* MainViewController.h */ = {isa = PBXFileReference; path = MainViewController.h; sourceTree = "<group>"; };
+		B37EF7F814DED6DB001A5C03 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		B37EF7F914DED6DB001A5C03 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		B37EF7FB14DED6DB001A5C03 /* FlipsideViewController.h */ = {isa = PBXFileReference; path = FlipsideViewController.h; sourceTree = "<group>"; };
+		B37EF7FB14DED6DB001A5C03 /* FlipsideViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlipsideViewController.h; sourceTree = "<group>"; };
 		B37EF7FC14DED6DB001A5C03 /* FlipsideViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlipsideViewController.m; sourceTree = "<group>"; };
 		B37EF7FF14DED6DB001A5C03 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainViewController.xib; sourceTree = "<group>"; };
 		B37EF80214DED6DB001A5C03 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FlipsideViewController.xib; sourceTree = "<group>"; };
+		B37EF80E14DEDA14001A5C03 /* TouchableLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchableLabel.h; sourceTree = "<group>"; };
+		B37EF80F14DEDA14001A5C03 /* TouchableLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchableLabel.m; sourceTree = "<group>"; };
+		B37EF81114DEDA8A001A5C03 /* SoundEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundEffect.h; sourceTree = "<group>"; };
+		B37EF81214DEDA8A001A5C03 /* SoundEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundEffect.m; sourceTree = "<group>"; };
+		B37EF81A14DEDD4F001A5C03 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		B37EF81D14DF2A6E001A5C03 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		B37EF81E14DF2A6E001A5C03 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		B37EF81F14DF2A6E001A5C03 /* interface.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = interface.png; sourceTree = "<group>"; };
+		B37EF82914DF2A90001A5C03 /* BH.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BH.caf; sourceTree = "<group>"; };
+		B37EF82A14DF2A90001A5C03 /* Bottle.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bottle.caf; sourceTree = "<group>"; };
+		B37EF82B14DF2A90001A5C03 /* Click.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Click.caf; sourceTree = "<group>"; };
+		B37EF82C14DF2A90001A5C03 /* End.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = End.caf; sourceTree = "<group>"; };
+		B37EF82D14DF2A90001A5C03 /* Start.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Start.caf; sourceTree = "<group>"; };
+		B37EF83314DF2AB6001A5C03 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		B37EF83514DF2AD8001A5C03 /* button_i.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_i.png; sourceTree = "<group>"; };
+		B37EF83614DF2AD8001A5C03 /* button_r.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_r.png; sourceTree = "<group>"; };
+		B37EF83714DF2AD8001A5C03 /* button_s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_s.png; sourceTree = "<group>"; };
+		B37EF84614DF2E91001A5C03 /* Blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Blue.png; sourceTree = "<group>"; };
+		B37EF84714DF2E91001A5C03 /* Blue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Blue@2x.png"; sourceTree = "<group>"; };
+		B37EF84814DF2E91001A5C03 /* MKInfoPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKInfoPanel.h; sourceTree = "<group>"; };
+		B37EF84914DF2E91001A5C03 /* MKInfoPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKInfoPanel.m; sourceTree = "<group>"; };
+		B37EF84A14DF2E91001A5C03 /* MKInfoPanel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MKInfoPanel.xib; sourceTree = "<group>"; };
+		B37EF84B14DF2E91001A5C03 /* Red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Red.png; sourceTree = "<group>"; };
+		B37EF84C14DF2E91001A5C03 /* Red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Red@2x.png"; sourceTree = "<group>"; };
+		B37EF84D14DF2E91001A5C03 /* Tick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tick.png; sourceTree = "<group>"; };
+		B37EF84E14DF2E91001A5C03 /* Tick@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tick@2x.png"; sourceTree = "<group>"; };
+		B37EF84F14DF2E91001A5C03 /* Warning.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Warning.png; sourceTree = "<group>"; };
+		B37EF85014DF2E91001A5C03 /* Warning@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Warning@2x.png"; sourceTree = "<group>"; };
+		B37EF85B14DF302B001A5C03 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		B3FFA58214E13D5E00FECE03 /* JWFolders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWFolders.h; sourceTree = "<group>"; };
+		B3FFA58314E13D5E00FECE03 /* JWFolders.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWFolders.m; sourceTree = "<group>"; };
+		B3FFA58414E13D5E00FECE03 /* UIScreen+Scale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScreen+Scale.h"; sourceTree = "<group>"; };
+		B3FFA58514E13D5E00FECE03 /* UIScreen+Scale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScreen+Scale.m"; sourceTree = "<group>"; };
+		B3FFA58614E13D5E00FECE03 /* UIView+Screenshot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Screenshot.h"; sourceTree = "<group>"; };
+		B3FFA58714E13D5E00FECE03 /* UIView+Screenshot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Screenshot.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +136,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B37EF85C14DF302B001A5C03 /* QuartzCore.framework in Frameworks */,
+				B37EF81B14DEDD4F001A5C03 /* AudioToolbox.framework in Frameworks */,
 				B37EF7E214DED6DB001A5C03 /* UIKit.framework in Frameworks */,
 				B37EF7E414DED6DB001A5C03 /* Foundation.framework in Frameworks */,
 				B37EF7E614DED6DB001A5C03 /* CoreGraphics.framework in Frameworks */,
@@ -57,9 +148,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B356CFCF14DF3DD9007389CC /* Pickers */ = {
+			isa = PBXGroup;
+			children = (
+				B356CFE014DF3E27007389CC /* AlarmModePickerController.h */,
+				B356CFE114DF3E27007389CC /* AlarmModePickerController.m */,
+				B356CFE214DF3E27007389CC /* AlarmModePickerController.xib */,
+				B356CFDB14DF3E1D007389CC /* BeepModePickerController.h */,
+				B356CFDC14DF3E1D007389CC /* BeepModePickerController.m */,
+				B356CFDD14DF3E1D007389CC /* BeepModePickerController.xib */,
+				B356CFD614DF3E06007389CC /* LapsPickerController.h */,
+				B356CFD714DF3E06007389CC /* LapsPickerController.m */,
+				B356CFD814DF3E06007389CC /* LapsPickerController.xib */,
+				B356CFD114DF3DF9007389CC /* IntervalPickerController.h */,
+				B356CFD214DF3DF9007389CC /* IntervalPickerController.m */,
+				B356CFD314DF3DF9007389CC /* IntervalOnePickerController.xib */,
+				B332E84614E0DBA6006FC0D7 /* IntervalTwoPickerController.xib */,
+			);
+			name = Pickers;
+			sourceTree = "<group>";
+		};
 		B37EF7D214DED6DB001A5C03 = {
 			isa = PBXGroup;
 			children = (
+				B37EF85B14DF302B001A5C03 /* QuartzCore.framework */,
+				B37EF81A14DEDD4F001A5C03 /* AudioToolbox.framework */,
 				B37EF7E914DED6DB001A5C03 /* Gymlaps2 */,
 				B37EF7E014DED6DB001A5C03 /* Frameworks */,
 				B37EF7DE14DED6DB001A5C03 /* Products */,
@@ -88,6 +201,13 @@
 		B37EF7E914DED6DB001A5C03 /* Gymlaps2 */ = {
 			isa = PBXGroup;
 			children = (
+				B3FFA58114E13D5E00FECE03 /* JWFolders */,
+				B37EF84514DF2E91001A5C03 /* MKInfoBundle */,
+				B37EF81C14DF2A61001A5C03 /* Assets */,
+				B37EF81414DEDA8F001A5C03 /* SoundEffect */,
+				B356CFCF14DF3DD9007389CC /* Pickers */,
+				B37EF80D14DED9E7001A5C03 /* TouchableLabel */,
+				B37EF80C14DED9D6001A5C03 /* Models */,
 				B37EF7F214DED6DB001A5C03 /* AppDelegate.h */,
 				B37EF7F314DED6DB001A5C03 /* AppDelegate.m */,
 				B37EF7F814DED6DB001A5C03 /* MainViewController.h */,
@@ -111,6 +231,83 @@
 				B37EF7F114DED6DB001A5C03 /* Gymlaps2-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B37EF80C14DED9D6001A5C03 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B332E84314E0CAF3006FC0D7 /* Timer.h */,
+				B332E84414E0CAF3006FC0D7 /* Timer.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		B37EF80D14DED9E7001A5C03 /* TouchableLabel */ = {
+			isa = PBXGroup;
+			children = (
+				B37EF80E14DEDA14001A5C03 /* TouchableLabel.h */,
+				B37EF80F14DEDA14001A5C03 /* TouchableLabel.m */,
+			);
+			name = TouchableLabel;
+			sourceTree = "<group>";
+		};
+		B37EF81414DEDA8F001A5C03 /* SoundEffect */ = {
+			isa = PBXGroup;
+			children = (
+				B37EF81114DEDA8A001A5C03 /* SoundEffect.h */,
+				B37EF81214DEDA8A001A5C03 /* SoundEffect.m */,
+			);
+			name = SoundEffect;
+			sourceTree = "<group>";
+		};
+		B37EF81C14DF2A61001A5C03 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				B37EF83314DF2AB6001A5C03 /* Default@2x.png */,
+				B37EF81D14DF2A6E001A5C03 /* icon.png */,
+				B37EF81E14DF2A6E001A5C03 /* icon@2x.png */,
+				B37EF81F14DF2A6E001A5C03 /* interface.png */,
+				B37EF83514DF2AD8001A5C03 /* button_i.png */,
+				B37EF83614DF2AD8001A5C03 /* button_r.png */,
+				B37EF83714DF2AD8001A5C03 /* button_s.png */,
+				B37EF82914DF2A90001A5C03 /* BH.caf */,
+				B37EF82A14DF2A90001A5C03 /* Bottle.caf */,
+				B37EF82B14DF2A90001A5C03 /* Click.caf */,
+				B37EF82C14DF2A90001A5C03 /* End.caf */,
+				B37EF82D14DF2A90001A5C03 /* Start.caf */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		B37EF84514DF2E91001A5C03 /* MKInfoBundle */ = {
+			isa = PBXGroup;
+			children = (
+				B37EF84614DF2E91001A5C03 /* Blue.png */,
+				B37EF84714DF2E91001A5C03 /* Blue@2x.png */,
+				B37EF84814DF2E91001A5C03 /* MKInfoPanel.h */,
+				B37EF84914DF2E91001A5C03 /* MKInfoPanel.m */,
+				B37EF84A14DF2E91001A5C03 /* MKInfoPanel.xib */,
+				B37EF84B14DF2E91001A5C03 /* Red.png */,
+				B37EF84C14DF2E91001A5C03 /* Red@2x.png */,
+				B37EF84D14DF2E91001A5C03 /* Tick.png */,
+				B37EF84E14DF2E91001A5C03 /* Tick@2x.png */,
+				B37EF84F14DF2E91001A5C03 /* Warning.png */,
+				B37EF85014DF2E91001A5C03 /* Warning@2x.png */,
+			);
+			path = MKInfoBundle;
+			sourceTree = "<group>";
+		};
+		B3FFA58114E13D5E00FECE03 /* JWFolders */ = {
+			isa = PBXGroup;
+			children = (
+				B3FFA58214E13D5E00FECE03 /* JWFolders.h */,
+				B3FFA58314E13D5E00FECE03 /* JWFolders.m */,
+				B3FFA58414E13D5E00FECE03 /* UIScreen+Scale.h */,
+				B3FFA58514E13D5E00FECE03 /* UIScreen+Scale.m */,
+				B3FFA58614E13D5E00FECE03 /* UIView+Screenshot.h */,
+				B3FFA58714E13D5E00FECE03 /* UIView+Screenshot.m */,
+			);
+			path = JWFolders;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,6 +363,32 @@
 				B37EF7EE14DED6DB001A5C03 /* InfoPlist.strings in Resources */,
 				B37EF80014DED6DB001A5C03 /* MainViewController.xib in Resources */,
 				B37EF80314DED6DB001A5C03 /* FlipsideViewController.xib in Resources */,
+				B37EF82014DF2A6E001A5C03 /* icon.png in Resources */,
+				B37EF82114DF2A6E001A5C03 /* icon@2x.png in Resources */,
+				B37EF82214DF2A6E001A5C03 /* interface.png in Resources */,
+				B37EF82E14DF2A90001A5C03 /* BH.caf in Resources */,
+				B37EF82F14DF2A90001A5C03 /* Bottle.caf in Resources */,
+				B37EF83014DF2A90001A5C03 /* Click.caf in Resources */,
+				B37EF83114DF2A90001A5C03 /* End.caf in Resources */,
+				B37EF83214DF2A90001A5C03 /* Start.caf in Resources */,
+				B37EF83414DF2AB6001A5C03 /* Default@2x.png in Resources */,
+				B37EF83814DF2AD8001A5C03 /* button_i.png in Resources */,
+				B37EF83914DF2AD8001A5C03 /* button_r.png in Resources */,
+				B37EF83A14DF2AD8001A5C03 /* button_s.png in Resources */,
+				B37EF85114DF2E91001A5C03 /* Blue.png in Resources */,
+				B37EF85214DF2E91001A5C03 /* Blue@2x.png in Resources */,
+				B37EF85414DF2E91001A5C03 /* MKInfoPanel.xib in Resources */,
+				B37EF85514DF2E91001A5C03 /* Red.png in Resources */,
+				B37EF85614DF2E91001A5C03 /* Red@2x.png in Resources */,
+				B37EF85714DF2E91001A5C03 /* Tick.png in Resources */,
+				B37EF85814DF2E91001A5C03 /* Tick@2x.png in Resources */,
+				B37EF85914DF2E91001A5C03 /* Warning.png in Resources */,
+				B37EF85A14DF2E91001A5C03 /* Warning@2x.png in Resources */,
+				B356CFD514DF3DF9007389CC /* IntervalOnePickerController.xib in Resources */,
+				B356CFDA14DF3E06007389CC /* LapsPickerController.xib in Resources */,
+				B356CFDF14DF3E1D007389CC /* BeepModePickerController.xib in Resources */,
+				B356CFE414DF3E27007389CC /* AlarmModePickerController.xib in Resources */,
+				B332E84714E0DBA6006FC0D7 /* IntervalTwoPickerController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,6 +404,17 @@
 				B37EF7F714DED6DB001A5C03 /* Gymlaps2.xcdatamodeld in Sources */,
 				B37EF7FA14DED6DB001A5C03 /* MainViewController.m in Sources */,
 				B37EF7FD14DED6DB001A5C03 /* FlipsideViewController.m in Sources */,
+				B37EF81014DEDA14001A5C03 /* TouchableLabel.m in Sources */,
+				B37EF81314DEDA8A001A5C03 /* SoundEffect.m in Sources */,
+				B37EF85314DF2E91001A5C03 /* MKInfoPanel.m in Sources */,
+				B356CFD414DF3DF9007389CC /* IntervalPickerController.m in Sources */,
+				B356CFD914DF3E06007389CC /* LapsPickerController.m in Sources */,
+				B356CFDE14DF3E1D007389CC /* BeepModePickerController.m in Sources */,
+				B356CFE314DF3E27007389CC /* AlarmModePickerController.m in Sources */,
+				B332E84514E0CAF4006FC0D7 /* Timer.m in Sources */,
+				B3FFA58814E13D5E00FECE03 /* JWFolders.m in Sources */,
+				B3FFA58914E13D5E00FECE03 /* UIScreen+Scale.m in Sources */,
+				B3FFA58A14E13D5E00FECE03 /* UIView+Screenshot.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +534,7 @@
 				B37EF80814DED6DB001A5C03 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

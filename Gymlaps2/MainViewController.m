@@ -7,30 +7,88 @@
 //
 
 #import "MainViewController.h"
+#import "IntervalPickerController.h"
+#import "BeepModePickerController.h"
+#import "AlarmModePickerController.h"
+#import "LapsPickerController.h"
+#import "SoundEffect.h"
+#import "MKInfoPanel.h"
+#import "SetListViewController.h"
+#import "JWFolders.h"
 
 @implementation MainViewController
 
+
 @synthesize managedObjectContext = _managedObjectContext;
+@synthesize numberOfLapsLabel, alarmModeLabel, intervalOneMinutesLabel, intervalOneSecondsLabel, intervalTwoMinutesLabel, intervalTwoSecondsLabel, beepModeLabel, setListLabel;
+@synthesize infoButton, startButton, resetButton;
+@synthesize intervalTimer, alarmTimer;
+@synthesize intervalAlarm, startSound, errorSound, endAlarm;
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Release any cached data, images, etc that aren't in use.
 }
 
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
-{
+{   
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    currentstage = stagestopped;
+    
+	intervalOneMinutes = 0;
+	intervalOneSeconds = 0;
+	intervalTwoMinutes = 0;
+	intervalTwoSeconds = 0;
+	alarms[0] = 1;
+	alarms[1] = 5;
+	alarms[2] = 10;
+	
+	beepMode = beepModeBeepHigh;
+	alarmMode = alarmMode1sec;
+	laps = 0;
+    runs=0;
+    
+	[self.intervalOneMinutesLabel setDelegate:self];
+	[self.intervalTwoMinutesLabel setDelegate:self];
+	[self.intervalOneSecondsLabel setDelegate:self];
+	[self.intervalTwoSecondsLabel setDelegate:self];
+	[self.alarmModeLabel setDelegate:self];
+	[self.beepModeLabel setDelegate:self];
+	[self.numberOfLapsLabel setDelegate:self];
+    [self.setListLabel setDelegate:self];
+	
+	self.intervalAlarm = [SoundEffect soundEffectForResourceName:@"BH" ofType:@"caf"];
+	self.startSound = [SoundEffect soundEffectForResourceName:@"Start" ofType:@"caf"];
+	self.errorSound = [SoundEffect soundEffectForResourceName:@"Bottle" ofType:@"caf"];
+	self.endAlarm = [SoundEffect soundEffectForResourceName:@"End" ofType:@"caf"];
+    
+	// enable touches
+    
+	[self setTouchesEnabled:YES];
+	resetButton.enabled = NO;
+    
+
+}
+
+-(void)setTouchesEnabled:(BOOL)isEnabled{
+	self.intervalOneMinutesLabel.isEnabled = isEnabled;
+	self.intervalOneSecondsLabel.isEnabled = isEnabled;
+	self.intervalTwoMinutesLabel.isEnabled = isEnabled;
+	self.intervalTwoSecondsLabel.isEnabled = isEnabled;
+	self.beepModeLabel.isEnabled = isEnabled;
+	self.alarmModeLabel.isEnabled = isEnabled;
+	self.numberOfLapsLabel.isEnabled = isEnabled;
+    self.setListLabel.isEnabled = isEnabled;
+	infoButton.userInteractionEnabled = isEnabled;
+    infoButton.enabled = isEnabled;
+    
 }
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -53,10 +111,8 @@
 	[super viewDidDisappear:animated];
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    // Return YES for supported orientations
-    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+	return (interfaceOrientation == UIInterfaceOrientationLandscapeLeft || interfaceOrientation == UIInterfaceOrientationLandscapeRight);
 }
 
 #pragma mark - Flipside View
@@ -73,5 +129,27 @@
     controller.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
     [self presentModalViewController:controller animated:YES];
 }
+
+#pragma mark - Touchable Label Delegate
+
+-(void)editLabel:(id)label {
+    
+    if (label == self.setListLabel) {
+        SetListViewController *setListViewController = [[SetListViewController alloc] initWithStyle:UITableViewStylePlain];
+        setListViewController.delegate = self;
+        UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:setListViewController];
+        navigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
+        [self presentModalViewController:navigationController animated:YES]; 
+    }
+}
+
+#pragma mark - Set List View Controller Delegate
+-(void)setListViewControllerDidFinish {
+    
+    [self dismissModalViewControllerAnimated:YES];
+    
+    
+}
+
 
 @end
