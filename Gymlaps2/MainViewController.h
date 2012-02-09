@@ -9,7 +9,6 @@
 #import "FlipsideViewController.h"
 #import <CoreData/CoreData.h>
 #import "TouchableLabel.h"
-#import "SetListViewController.h"
 
 // beep mode
 #define beepModeBeepHigh 0
@@ -35,7 +34,7 @@
 
 @class IntervalPickerController,BeepModePickerController,AlarmModePickerController,LapsPickerController, SoundEffect;
 
-@interface MainViewController : UIViewController <FlipsideViewControllerDelegate,TouchableLabelDelegate,SetListViewControllerDelegate> {
+@interface MainViewController : UIViewController <FlipsideViewControllerDelegate,TouchableLabelDelegate> {
     
     TouchableLabel *numberOfLapsLabel;
 	TouchableLabel *alarmModeLabel;

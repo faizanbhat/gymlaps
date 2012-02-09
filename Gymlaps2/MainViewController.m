@@ -13,7 +13,6 @@
 #import "LapsPickerController.h"
 #import "SoundEffect.h"
 #import "MKInfoPanel.h"
-#import "SetListViewController.h"
 #import "JWFolders.h"
 
 @implementation MainViewController
@@ -135,11 +134,7 @@
 -(void)editLabel:(id)label {
     
     if (label == self.setListLabel) {
-        SetListViewController *setListViewController = [[SetListViewController alloc] initWithStyle:UITableViewStylePlain];
-        setListViewController.delegate = self;
-        UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:setListViewController];
-        navigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
-        [self presentModalViewController:navigationController animated:YES]; 
+
     }
 }
 
