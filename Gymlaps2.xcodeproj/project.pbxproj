@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		B332E84514E0CAF4006FC0D7 /* Timer.m in Sources */ = {isa = PBXBuildFile; fileRef = B332E84414E0CAF3006FC0D7 /* Timer.m */; };
 		B332E84714E0DBA6006FC0D7 /* IntervalTwoPickerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B332E84614E0DBA6006FC0D7 /* IntervalTwoPickerController.xib */; };
+		B341C7E914E5CACE00ADCBBB /* FolderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B341C7E714E5CACE00ADCBBB /* FolderViewController.m */; };
+		B341C7EA14E5CACE00ADCBBB /* FolderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B341C7E814E5CACE00ADCBBB /* FolderViewController.xib */; };
 		B356CFD414DF3DF9007389CC /* IntervalPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = B356CFD214DF3DF9007389CC /* IntervalPickerController.m */; };
 		B356CFD514DF3DF9007389CC /* IntervalOnePickerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B356CFD314DF3DF9007389CC /* IntervalOnePickerController.xib */; };
 		B356CFD914DF3E06007389CC /* LapsPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = B356CFD714DF3E06007389CC /* LapsPickerController.m */; };
@@ -64,6 +66,9 @@
 		B332E84314E0CAF3006FC0D7 /* Timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Timer.h; sourceTree = "<group>"; };
 		B332E84414E0CAF3006FC0D7 /* Timer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Timer.m; sourceTree = "<group>"; };
 		B332E84614E0DBA6006FC0D7 /* IntervalTwoPickerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IntervalTwoPickerController.xib; sourceTree = "<group>"; };
+		B341C7E614E5CACE00ADCBBB /* FolderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FolderViewController.h; sourceTree = "<group>"; };
+		B341C7E714E5CACE00ADCBBB /* FolderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FolderViewController.m; sourceTree = "<group>"; };
+		B341C7E814E5CACE00ADCBBB /* FolderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FolderViewController.xib; sourceTree = "<group>"; };
 		B356CFD114DF3DF9007389CC /* IntervalPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntervalPickerController.h; sourceTree = "<group>"; };
 		B356CFD214DF3DF9007389CC /* IntervalPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntervalPickerController.m; sourceTree = "<group>"; };
 		B356CFD314DF3DF9007389CC /* IntervalOnePickerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IntervalOnePickerController.xib; sourceTree = "<group>"; };
@@ -306,6 +311,9 @@
 				B3FFA58514E13D5E00FECE03 /* UIScreen+Scale.m */,
 				B3FFA58614E13D5E00FECE03 /* UIView+Screenshot.h */,
 				B3FFA58714E13D5E00FECE03 /* UIView+Screenshot.m */,
+				B341C7E614E5CACE00ADCBBB /* FolderViewController.h */,
+				B341C7E714E5CACE00ADCBBB /* FolderViewController.m */,
+				B341C7E814E5CACE00ADCBBB /* FolderViewController.xib */,
 			);
 			path = JWFolders;
 			sourceTree = "<group>";
@@ -389,6 +397,7 @@
 				B356CFDF14DF3E1D007389CC /* BeepModePickerController.xib in Resources */,
 				B356CFE414DF3E27007389CC /* AlarmModePickerController.xib in Resources */,
 				B332E84714E0DBA6006FC0D7 /* IntervalTwoPickerController.xib in Resources */,
+				B341C7EA14E5CACE00ADCBBB /* FolderViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,6 +424,7 @@
 				B3FFA58814E13D5E00FECE03 /* JWFolders.m in Sources */,
 				B3FFA58914E13D5E00FECE03 /* UIScreen+Scale.m in Sources */,
 				B3FFA58A14E13D5E00FECE03 /* UIView+Screenshot.m in Sources */,
+				B341C7E914E5CACE00ADCBBB /* FolderViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
