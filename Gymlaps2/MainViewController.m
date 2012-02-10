@@ -85,6 +85,10 @@
     
 }
 
+- (IBAction)longTap:(id)sender {
+    NSLog(@"longtap");
+}
+
 - (void)viewDidUnload
 {
     [super viewDidUnload];

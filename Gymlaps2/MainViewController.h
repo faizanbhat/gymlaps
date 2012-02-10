@@ -107,5 +107,6 @@
 - (IBAction)showInfo:(id)sender;
 -(void)editLabel:(id)label;
 -(void)setTouchesEnabled:(BOOL)isEnabled;
+- (IBAction)longTap:(id)sender;
 
 @end
