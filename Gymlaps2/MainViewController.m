@@ -404,6 +404,7 @@
 #pragma mark - Core Data Methods
 
 
+
 -(void)loadScreenWithTimer:(Timer*)t{
     intervalOneMinutes = [t.intervalOneMinutes intValue];
     intervalOneSeconds = [t.intervalOneSeconds intValue];
@@ -411,7 +412,7 @@
     intervalTwoSeconds = [t.intervalTwoSeconds intValue];
     laps = [t.laps intValue];
     alarmMode = [t.alarmMode intValue];
-    self.setListLabel.text = t.name;
+
     self.screenTimer = t;
     
     // clear the dirty timer flag
@@ -443,22 +444,23 @@
         }
         
         self.screenTimer = (Timer*)t;
-        [self showInfo:@"Timer Saved!" withSubtitle:nil];
+        [self showInfo:@"Timer Saved" withSubtitle:nil];
 
     }
     
     else if (timerSaveMode==timerEditName) {
     
-        screenTimer.name = timerNameTextField.text;
-        NSError *error;
-        if (![context save:&error]) {
-            [self showError:@"Whoops, couldn't rename!" withSubtitle:[error localizedDescription]];
-            return NO;
-        }       
-        
-        [self showInfo:@"Timer Renamed!" withSubtitle:nil];
+        if ([self.timerNameTextField.text compare:screenTimer.name]==1) {
 
-        
+            screenTimer.name = timerNameTextField.text;
+            NSError *error;
+            if (![context save:&error]) {
+                [self showError:@"Whoops, couldn't rename!" withSubtitle:[error localizedDescription]];
+                return NO;
+            }       
+            
+            [self showInfo:@"Timer Renamed" withSubtitle:nil];
+        }
     }
     
     else if (timerSaveMode==timerEditFull) {
@@ -473,6 +475,7 @@
             [t setValue:[NSNumber numberWithInt:intervalTwoSeconds] forKey:@"intervalTwoSeconds"];
             [t setValue:[NSNumber numberWithInt:laps] forKey:@"laps"];
             [t setValue:[NSNumber numberWithInt:alarmMode] forKey:@"alarmMode"];
+
             [t setValue:self.timerNameTextField.text forKey:@"name"];
             
             NSError *error;
@@ -481,7 +484,7 @@
                 return NO;
             }
             
-            [self showInfo:@"Timer Saved!" withSubtitle:@"GYMLAPS saved a new timer"];
+            [self showInfo:@"New Timer Saved" withSubtitle:[NSString stringWithFormat:@"Created new timer with the specified name"]];
             self.screenTimer = (Timer*)t;
         }
         
@@ -499,7 +502,7 @@
                 return NO;
         }
         
-        [self showInfo:@"Timer Updated!" withSubtitle:@"GYMLAPS updated the existing timer because its name wasn't changed"];
+        [self showInfo:@"Timer Updated" withSubtitle:@"Updated existing timer with matching name"];
         }
     }
     
