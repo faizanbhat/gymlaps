@@ -43,7 +43,6 @@
 	alarms[1] = 5;
 	alarms[2] = 10;
 	
-    saveScreenShowing = NO;
     screenTimerModified = NO;
     
 	beepMode = beepModeBeepHigh;
@@ -256,7 +255,7 @@
     
 }
 
-#pragma mark Save Screen Methods
+#pragma mark - Save Screen Methods
 
 - (IBAction)longTap:(UIGestureRecognizer*)sender {
     if (sender.state == UIGestureRecognizerStateBegan) {
@@ -327,21 +326,118 @@
     [self hideSaveScreen];
 }
 
-- (IBAction)save:(id)sender {
+#pragma mark - Core Data Methods
+
+-(IBAction)saveOnscreenTimer:(id)sender{
+    
     
     if ([self.timerNameTextField isFirstResponder])
         [self.timerNameTextField resignFirstResponder];
     
-    BOOL saved = [self saveOnscreenTimer];
+    NSManagedObjectContext *context = [self managedObjectContext];
+    NSManagedObject *t;
     
-    if (saved) {
-        NSLog(@"saved");
+    if (timerSaveMode==timerSaveNew) {
+        t = [NSEntityDescription
+             insertNewObjectForEntityForName:@"Timer" 
+             inManagedObjectContext:context];
+        [t setValue:[NSNumber numberWithInt:intervalOneMinutes] forKey:@"intervalOneMinutes"];
+        [t setValue:[NSNumber numberWithInt:intervalOneSeconds] forKey:@"intervalOneSeconds"];
+        [t setValue:[NSNumber numberWithInt:intervalTwoMinutes] forKey:@"intervalTwoMinutes"];
+        [t setValue:[NSNumber numberWithInt:intervalTwoSeconds] forKey:@"intervalTwoSeconds"];
+        [t setValue:[NSNumber numberWithInt:laps] forKey:@"laps"];
+        [t setValue:[NSNumber numberWithInt:alarmMode] forKey:@"alarmMode"];
+        [t setValue:self.timerNameTextField.text forKey:@"name"];
+        
+        NSError *error;
+        if (![context save:&error]) {
+            [self showError:@"Whoops, couldn't save!" withSubtitle:[error localizedDescription]];
+            return NO;
+        }
+        
+        self.screenTimer = (Timer*)t;
+        [self showInfo:@"Timer Saved" withSubtitle:nil];
+        
     }
     
+    else if (timerSaveMode==timerEditName) {
+        
+        if (![self.timerNameTextField.text isEqualToString:screenTimer.name]==1) {
+            
+            screenTimer.name = timerNameTextField.text;
+            NSError *error;
+            if (![context save:&error]) {
+                [self showError:@"Whoops, couldn't rename!" withSubtitle:[error localizedDescription]];
+                return NO;
+            }       
+            
+            [self showInfo:@"Timer Renamed" withSubtitle:nil];
+        }
+    }
+    
+    else if (timerSaveMode==timerEditFull) {
+        
+        if (![self.timerNameTextField.text isEqualToString:screenTimer.name]) {
+            t = [NSEntityDescription
+                 insertNewObjectForEntityForName:@"Timer" 
+                 inManagedObjectContext:context];
+            [t setValue:[NSNumber numberWithInt:intervalOneMinutes] forKey:@"intervalOneMinutes"];
+            [t setValue:[NSNumber numberWithInt:intervalOneSeconds] forKey:@"intervalOneSeconds"];
+            [t setValue:[NSNumber numberWithInt:intervalTwoMinutes] forKey:@"intervalTwoMinutes"];
+            [t setValue:[NSNumber numberWithInt:intervalTwoSeconds] forKey:@"intervalTwoSeconds"];
+            [t setValue:[NSNumber numberWithInt:laps] forKey:@"laps"];
+            [t setValue:[NSNumber numberWithInt:alarmMode] forKey:@"alarmMode"];
+            
+            [t setValue:self.timerNameTextField.text forKey:@"name"];
+            
+            NSError *error;
+            if (![context save:&error]) {
+                [self showError:@"Whoops, couldn't save!" withSubtitle:[error localizedDescription]];
+                return NO;
+            }
+            
+            [self showInfo:@"New Timer Saved" withSubtitle:[NSString stringWithFormat:@"Created new timer with the specified name"]];
+            self.screenTimer = (Timer*)t;
+        }
+        
+        else {
+            screenTimer.intervalOneMinutes = [NSNumber numberWithInt:intervalOneMinutes];
+            screenTimer.intervalOneSeconds = [NSNumber numberWithInt:intervalOneSeconds];
+            screenTimer.intervalTwoMinutes = [NSNumber numberWithInt:intervalTwoMinutes];
+            screenTimer.intervalTwoSeconds = [NSNumber numberWithInt:intervalTwoSeconds];
+            screenTimer.laps = [NSNumber numberWithInt:laps];
+            screenTimer.alarmMode = [NSNumber numberWithInt:alarmMode];
+            // no need to change name
+            NSError *error;
+            if (![context save:&error]) {
+                [self showError:@"Whoops, couldn't save!" withSubtitle:[error localizedDescription]];
+                return NO;
+            }
+            
+            [self showInfo:@"Timer Updated" withSubtitle:@"Updated existing timer with matching name"];
+        }
+    }
+    
+    
+    screenTimerModified = NO; //reset dirty flag as timer has been freshly saved
+    [self refreshScreen];
     [self hideSaveScreen];
 }
 
-#pragma mark - Set List View Controller Delegate
+-(void)loadScreenWithTimer:(Timer*)t{
+    intervalOneMinutes = [t.intervalOneMinutes intValue];
+    intervalOneSeconds = [t.intervalOneSeconds intValue];
+    intervalTwoMinutes = [t.intervalTwoMinutes intValue];
+    intervalTwoSeconds = [t.intervalTwoSeconds intValue];
+    laps = [t.laps intValue];
+    alarmMode = [t.alarmMode intValue];
+    
+    self.screenTimer = t;
+    
+    // clear the dirty timer flag
+    screenTimerModified = NO;
+    [self refreshScreen];
+}
 
 #pragma mark - Picker Controller Delegates
 
@@ -401,119 +497,7 @@
     [self dismissModalViewControllerAnimated:YES];
 }
 
-#pragma mark - Core Data Methods
 
-
--(void)loadScreenWithTimer:(Timer*)t{
-    intervalOneMinutes = [t.intervalOneMinutes intValue];
-    intervalOneSeconds = [t.intervalOneSeconds intValue];
-    intervalTwoMinutes = [t.intervalTwoMinutes intValue];
-    intervalTwoSeconds = [t.intervalTwoSeconds intValue];
-    laps = [t.laps intValue];
-    alarmMode = [t.alarmMode intValue];
-
-    self.screenTimer = t;
-    
-    // clear the dirty timer flag
-    screenTimerModified = NO;
-    [self refreshScreen];
-}
-
--(BOOL)saveOnscreenTimer{
-    
-    NSManagedObjectContext *context = [self managedObjectContext];
-    NSManagedObject *t;
-    
-    if (timerSaveMode==timerSaveNew) {
-        t = [NSEntityDescription
-                                           insertNewObjectForEntityForName:@"Timer" 
-                                           inManagedObjectContext:context];
-        [t setValue:[NSNumber numberWithInt:intervalOneMinutes] forKey:@"intervalOneMinutes"];
-        [t setValue:[NSNumber numberWithInt:intervalOneSeconds] forKey:@"intervalOneSeconds"];
-        [t setValue:[NSNumber numberWithInt:intervalTwoMinutes] forKey:@"intervalTwoMinutes"];
-        [t setValue:[NSNumber numberWithInt:intervalTwoSeconds] forKey:@"intervalTwoSeconds"];
-        [t setValue:[NSNumber numberWithInt:laps] forKey:@"laps"];
-        [t setValue:[NSNumber numberWithInt:alarmMode] forKey:@"alarmMode"];
-        [t setValue:self.timerNameTextField.text forKey:@"name"];
-
-        NSError *error;
-        if (![context save:&error]) {
-            [self showError:@"Whoops, couldn't save!" withSubtitle:[error localizedDescription]];
-            return NO;
-        }
-        
-        self.screenTimer = (Timer*)t;
-        [self showInfo:@"Timer Saved" withSubtitle:nil];
-
-    }
-    
-    else if (timerSaveMode==timerEditName) {
-    
-        if (![self.timerNameTextField.text isEqualToString:screenTimer.name]==1) {
-
-            screenTimer.name = timerNameTextField.text;
-            NSError *error;
-            if (![context save:&error]) {
-                [self showError:@"Whoops, couldn't rename!" withSubtitle:[error localizedDescription]];
-                return NO;
-            }       
-            
-            [self showInfo:@"Timer Renamed" withSubtitle:nil];
-        }
-    }
-    
-    else if (timerSaveMode==timerEditFull) {
-        
-        if (![self.timerNameTextField.text isEqualToString:screenTimer.name]) {
-            t = [NSEntityDescription
-                 insertNewObjectForEntityForName:@"Timer" 
-                 inManagedObjectContext:context];
-            [t setValue:[NSNumber numberWithInt:intervalOneMinutes] forKey:@"intervalOneMinutes"];
-            [t setValue:[NSNumber numberWithInt:intervalOneSeconds] forKey:@"intervalOneSeconds"];
-            [t setValue:[NSNumber numberWithInt:intervalTwoMinutes] forKey:@"intervalTwoMinutes"];
-            [t setValue:[NSNumber numberWithInt:intervalTwoSeconds] forKey:@"intervalTwoSeconds"];
-            [t setValue:[NSNumber numberWithInt:laps] forKey:@"laps"];
-            [t setValue:[NSNumber numberWithInt:alarmMode] forKey:@"alarmMode"];
-
-            [t setValue:self.timerNameTextField.text forKey:@"name"];
-            
-            NSError *error;
-            if (![context save:&error]) {
-                [self showError:@"Whoops, couldn't save!" withSubtitle:[error localizedDescription]];
-                return NO;
-            }
-            
-            [self showInfo:@"New Timer Saved" withSubtitle:[NSString stringWithFormat:@"Created new timer with the specified name"]];
-            self.screenTimer = (Timer*)t;
-        }
-        
-        else {
-            screenTimer.intervalOneMinutes = [NSNumber numberWithInt:intervalOneMinutes];
-            screenTimer.intervalOneSeconds = [NSNumber numberWithInt:intervalOneSeconds];
-            screenTimer.intervalTwoMinutes = [NSNumber numberWithInt:intervalTwoMinutes];
-            screenTimer.intervalTwoSeconds = [NSNumber numberWithInt:intervalTwoSeconds];
-            screenTimer.laps = [NSNumber numberWithInt:laps];
-            screenTimer.alarmMode = [NSNumber numberWithInt:alarmMode];
-            // no need to change name
-            NSError *error;
-            if (![context save:&error]) {
-                [self showError:@"Whoops, couldn't save!" withSubtitle:[error localizedDescription]];
-                return NO;
-        }
-        
-        [self showInfo:@"Timer Updated" withSubtitle:@"Updated existing timer with matching name"];
-        }
-    }
-    
-    
-    screenTimerModified = NO; //reset dirty flag as timer has been freshly saved
-    [self refreshScreen];
-    return YES;
-}
-
--(BOOL)editCurrentTimer {
-    return NO;  
-}
 
 #pragma mark - MKInfoPanel
 -(void)showError:(NSString*)error withSubtitle:(NSString*)subtitle{

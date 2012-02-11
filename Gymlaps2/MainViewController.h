@@ -89,7 +89,6 @@
     // The screenTimer variable is here only for loading and saving timers
     Timer *screenTimer;
     
-    BOOL saveScreenShowing; //Whether saveScreen is being shown
     
     BOOL screenTimerModified; // Whether timer on screen has been edited without saving
     
@@ -137,7 +136,7 @@
 -(void)alarmModePickerController:(id)controller didExitWithAlarmMode:(int)am;
 -(void)lapsPickerController:(id)controller didExitWithLaps:(int)l;
 -(void)beepModePickerController:(id)controller didExitWithBeepMode:(int)bm;
--(BOOL)saveOnscreenTimer;
+-(IBAction)saveOnscreenTimer:(id)sender;
 -(void)refreshScreen;
 -(void)showSaveScreen;
 -(void)hideSaveScreen;

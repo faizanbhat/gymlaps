@@ -272,7 +272,7 @@
 									<int key="type">1</int>
 									<double key="pointSize">17</double>
 								</object>
-								<object class="NSFont" key="IBUIFont" id="449746764">
+								<object class="NSFont" key="IBUIFont" id="339143901">
 									<string key="NSName">Helvetica</string>
 									<double key="NSSize">17</double>
 									<int key="NSfFlags">16</int>
@@ -470,7 +470,7 @@
 								</object>
 								<int key="IBUIClearButtonMode">3</int>
 								<reference key="IBUIFontDescription" ref="341411609"/>
-								<reference key="IBUIFont" ref="449746764"/>
+								<reference key="IBUIFont" ref="339143901"/>
 							</object>
 							<object class="IBUITextField" id="888420695">
 								<reference key="NSNextResponder" ref="639424765"/>
@@ -502,7 +502,7 @@
 								</object>
 								<int key="IBUIClearButtonMode">3</int>
 								<reference key="IBUIFontDescription" ref="341411609"/>
-								<reference key="IBUIFont" ref="449746764"/>
+								<reference key="IBUIFont" ref="339143901"/>
 							</object>
 							<object class="IBUIButton" id="752312519">
 								<reference key="NSNextResponder" ref="639424765"/>
@@ -538,7 +538,7 @@
 									<int key="NSfFlags">16</int>
 								</object>
 							</object>
-							<object class="IBUILabel" id="155609242">
+							<object class="IBUILabel" id="491015719">
 								<reference key="NSNextResponder" ref="639424765"/>
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{17, 0}, {232, 21}}</string>
@@ -573,7 +573,7 @@
 						<string key="NSFrame">{{53, 54}, {382, 160}}</string>
 						<reference key="NSSuperview" ref="883825266"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="155609242"/>
+						<reference key="NSNextKeyView" ref="491015719"/>
 						<string key="NSReuseIdentifierKey">_NS:196</string>
 						<reference key="IBUIBackgroundColor" ref="382030081"/>
 						<float key="IBUIAlpha">0.0</float>
@@ -743,7 +743,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">timerSaveLabel</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="155609242"/>
+						<reference key="destination" ref="491015719"/>
 					</object>
 					<int key="connectionID">112</int>
 				</object>
@@ -776,12 +776,12 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
-						<string key="label">save:</string>
+						<string key="label">saveOnscreenTimer:</string>
 						<reference key="source" ref="888420695"/>
 						<reference key="destination" ref="372490531"/>
 						<int key="IBEventType">20</int>
 					</object>
-					<int key="connectionID">108</int>
+					<int key="connectionID">118</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
@@ -938,7 +938,7 @@
 							<reference ref="752312519"/>
 							<reference ref="888420695"/>
 							<reference ref="269804398"/>
-							<reference ref="155609242"/>
+							<reference ref="491015719"/>
 						</array>
 						<reference key="parent" ref="883825266"/>
 					</object>
@@ -959,7 +959,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">111</int>
-						<reference key="object" ref="155609242"/>
+						<reference key="object" ref="491015719"/>
 						<reference key="parent" ref="639424765"/>
 					</object>
 				</array>
@@ -1005,7 +1005,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">117</int>
+			<int key="maxID">118</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -1014,12 +1014,17 @@
 					<string key="superclassName">UIViewController</string>
 					<dictionary class="NSMutableDictionary" key="actions">
 						<string key="longTap:">UIGestureRecognizer</string>
+						<string key="saveOnscreenTimer:">id</string>
 						<string key="showInfo:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
 						<object class="IBActionInfo" key="longTap:">
 							<string key="name">longTap:</string>
 							<string key="candidateClassName">UIGestureRecognizer</string>
+						</object>
+						<object class="IBActionInfo" key="saveOnscreenTimer:">
+							<string key="name">saveOnscreenTimer:</string>
+							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="showInfo:">
 							<string key="name">showInfo:</string>
