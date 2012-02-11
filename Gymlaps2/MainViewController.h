@@ -74,6 +74,7 @@
 	SoundEffect *errorSound;
     SoundEffect *endAlarm;
     SoundEffect *whooshSound;
+    SoundEffect *okSound;
     
 	int timerSeconds;
 	int alarmCount;
@@ -117,6 +118,8 @@
 @property (strong, nonatomic) SoundEffect *errorSound;
 @property (strong, nonatomic) SoundEffect *endAlarm;
 @property (strong, nonatomic) SoundEffect *whooshSound;
+@property (strong, nonatomic) SoundEffect *okSound;
+
 @property (strong, nonatomic) Timer *screenTimer;
 
 - (IBAction)showInfo:(id)sender;
@@ -134,5 +137,6 @@
 -(void)hideSaveScreen;
 -(void)loadScreenWithTimer:(Timer*)t;
 -(void)showError:(NSString*)error withSubtitle:(NSString*)subtitle;
+-(void)showInfo:(NSString*)info withSubtitle:(NSString*)subtitle;
 
 @end

@@ -17,7 +17,7 @@
 @synthesize numberOfLapsLabel, alarmModeLabel, intervalOneMinutesLabel, intervalOneSecondsLabel, intervalTwoMinutesLabel, intervalTwoSecondsLabel, beepModeLabel, setListLabel;
 @synthesize infoButton, startButton, resetButton;
 @synthesize intervalTimer, alarmTimer;
-@synthesize intervalAlarm, startSound, errorSound, endAlarm, whooshSound;
+@synthesize intervalAlarm, startSound, errorSound, endAlarm, whooshSound, okSound;
 @synthesize screenTimer;
 
 - (void)didReceiveMemoryWarning
@@ -63,6 +63,7 @@
 	self.errorSound = [SoundEffect soundEffectForResourceName:@"Bottle" ofType:@"caf"];
 	self.endAlarm = [SoundEffect soundEffectForResourceName:@"End" ofType:@"caf"];
     self.whooshSound = [SoundEffect soundEffectForResourceName:@"Whoosh" ofType:@"caf"];
+    self.okSound = [SoundEffect soundEffectForResourceName:@"Glass" ofType:@"caf"];
 
 	// enable touches
     
@@ -291,9 +292,11 @@
     BOOL saved = [self saveOnscreenTimer];
     
     if (saved) {
-        NSLog(@"Saved");
+        [self showInfo:@"Saved!" withSubtitle:nil];
+        setListLabel.text = self.screenTimer.name;
     }
-
+    
+    
     [self hideSaveScreen];
 }
 
@@ -373,10 +376,11 @@
 
     NSError *error;
     if (![context save:&error]) {
-        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+        [self showError:@"Whoops, couldn't save!" withSubtitle:[error localizedDescription]];
         return NO;
     }
     
+    self.screenTimer = t;
     return YES;
 }
 
@@ -399,4 +403,20 @@
     else
         [errorSound vibrate];
 }
+
+-(void)showInfo:(NSString*)info withSubtitle:(NSString*)subtitle{
+    [MKInfoPanel showPanelInView:self.view 
+                            type:MKInfoPanelTypeInfo 
+                           title:info 
+                        subtitle:subtitle 
+                       hideAfter:3];
+    
+    if (beepMode==beepModeBeepHigh)
+        [okSound play];
+    else if (beepMode == beepModeBeepHighVibrate)
+        [okSound playVibrate];
+    else
+        [okSound vibrate];
+}
+
 @end
