@@ -108,10 +108,25 @@
     
     // if a saved timer has been modified since last screen refresh, change color to indicate dirty timer
     if (self.screenTimer!=nil) {
+        
+        
         setListLabel.text = self.screenTimer.name;
         
-        if (screenTimerModified)
-            self.setListLabel.textColor = [UIColor redColor];   
+        if (screenTimerModified) {
+            
+            // first check if user has switched timer back to original value
+            if (intervalOneMinutes==[screenTimer.intervalOneMinutes intValue] && intervalTwoMinutes==[screenTimer.intervalTwoMinutes intValue] && intervalOneSeconds==[screenTimer.intervalOneSeconds intValue] && intervalTwoSeconds==[screenTimer.intervalTwoSeconds intValue] && laps==[screenTimer.laps intValue] && alarmMode==[screenTimer.alarmMode intValue]) {
+                
+                screenTimerModified = NO;
+                self.setListLabel.textColor = [UIColor blackColor];   
+
+            }
+                                                                                                                                                    
+            else
+                self.setListLabel.textColor = [UIColor redColor];  
+        }
+        
+        
         else
             self.setListLabel.textColor = [UIColor blackColor];   
     }
@@ -337,10 +352,10 @@
 
     if (interval == 1) {
         if(intervalOneMinutes!=mins || intervalOneSeconds!=secs) {
+            // only update if there has been a value change
             screenTimerModified = YES;
             intervalOneMinutes = mins;
             intervalOneSeconds = secs;	
-            [self refreshScreen];
         }
 	}
     
@@ -349,10 +364,10 @@
             screenTimerModified = YES;
             intervalTwoMinutes = mins;
             intervalTwoSeconds = secs;	
-            [self refreshScreen];
         }
 	}
     
+    [self refreshScreen];
     [self dismissModalViewControllerAnimated:YES];
 }
 
