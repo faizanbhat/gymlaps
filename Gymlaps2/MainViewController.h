@@ -38,6 +38,11 @@
 #define stagealarmtwopaused 8
 #define stagealarmend 9
 
+// timer save modes
+#define timerSaveNew 0
+#define timerEditName 1
+#define timerEditFull 2
+
 @class BeepModePickerController,AlarmModePickerController,LapsPickerController, SoundEffect;
 
 @interface MainViewController : UIViewController <FlipsideViewControllerDelegate,TouchableLabelDelegate,IntervalPickerControllerDelegate, AlarmModePickerControllerDelegate, LapsPickerControllerDelegate, BeepModePickerControllerDelegate> {
@@ -89,6 +94,8 @@
     
     BOOL screenTimerModified; // Whether timer on screen has been edited without saving
     
+    // this is to determine whether new timer is being saved or existing one is being updated.
+    int timerSaveMode;
 }
 
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
@@ -96,6 +103,7 @@
 @property (strong, nonatomic) IBOutlet UIView *saveScreen;
 @property (strong, nonatomic) IBOutlet UITextField *timerNameTextField;
 @property (strong, nonatomic) IBOutlet UIButton *cancelSaveButton;
+@property (strong, nonatomic) IBOutlet UILabel *timerSaveLabel;
 
 @property (strong, nonatomic) IBOutlet TouchableLabel *numberOfLapsLabel;
 @property (strong, nonatomic) IBOutlet TouchableLabel *alarmModeLabel;

@@ -10,6 +10,7 @@
 #import "SoundEffect.h"
 
 @implementation MainViewController
+@synthesize timerSaveLabel;
 
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize screen, saveScreen;
@@ -106,10 +107,16 @@
         numberOfLapsLabel.text = [NSString stringWithFormat:@"%d",laps];
     
     // if a saved timer has been modified since last screen refresh, change color to indicate dirty timer
-    if (screenTimerModified && self.screenTimer!=nil)
-        self.setListLabel.textColor = [UIColor redColor];    
-    else
-        self.setListLabel.textColor = [UIColor blackColor];    
+    if (self.screenTimer!=nil) {
+        setListLabel.text = self.screenTimer.name;
+        
+        if (screenTimerModified)
+            self.setListLabel.textColor = [UIColor redColor];   
+        else
+            self.setListLabel.textColor = [UIColor blackColor];   
+    }
+
+     
 
 }
 
@@ -135,6 +142,7 @@
     [self setSaveScreen:nil];
     [self setTimerNameTextField:nil];
     [self setCancelSaveButton:nil];
+    [self setTimerSaveLabel:nil];
     [super viewDidUnload];
 }
 
@@ -251,6 +259,21 @@
         
         else{
             
+            // figure out what type of save operation must be performed
+            
+            if (self.screenTimer == nil)
+                timerSaveMode = timerSaveNew; // new timer is being saved
+            
+            else { 
+                if (!screenTimerModified) // existing timer name change
+                    timerSaveMode = timerEditName;
+                    
+                else
+                    timerSaveMode = timerEditFull;
+            }
+            
+            
+            
             [self showSaveScreen];
             [self.timerNameTextField becomeFirstResponder];
         }
@@ -259,10 +282,12 @@
 }
 
 - (void)showSaveScreen{
-    [UIView beginAnimations:@"Screen out" context:nil];
-    [UIView setAnimationDuration:0.25];
+    
+    // set label text based on timerSaveMode
+    NSArray *array  = [NSArray arrayWithObjects:@"SAVE NEW TIMER", @"RENAME UNMODIFIED TIMER", @"SAVE MODIFIED TIMER",nil];
+    self.timerSaveLabel.text = [array objectAtIndex:timerSaveMode];
+       
     screen.alpha = 0.0;    
-    [UIView commitAnimations];
     
     [UIView beginAnimations:@"Save Screen in" context:nil];
     [UIView setAnimationDuration:0.50];
@@ -272,10 +297,7 @@
 }
 
 - (void)hideSaveScreen{
-    [UIView beginAnimations:@"Save Screen Out" context:nil];
-    [UIView setAnimationDuration:0.25];
     saveScreen.alpha = 0.0;    
-    [UIView commitAnimations];
     
     [UIView beginAnimations:@"Screen in" context:nil];
     [UIView setAnimationDuration:0.50];
@@ -294,6 +316,7 @@
 }
 
 - (IBAction)save:(id)sender {
+    
     if ([self.timerNameTextField isFirstResponder])
         [self.timerNameTextField resignFirstResponder];
     
@@ -301,7 +324,6 @@
     
     if (saved) {
         [self showInfo:@"Saved!" withSubtitle:nil];
-        setListLabel.text = self.screenTimer.name;
     }
     
     [self hideSaveScreen];
@@ -380,8 +402,8 @@
                                        inManagedObjectContext:context];
     [t setValue:[NSNumber numberWithInt:intervalOneMinutes] forKey:@"intervalOneMinutes"];
     [t setValue:[NSNumber numberWithInt:intervalOneSeconds] forKey:@"intervalOneSeconds"];
-    [t setValue:[NSNumber numberWithInt:intervalOneMinutes] forKey:@"intervalTwoMinutes"];
-    [t setValue:[NSNumber numberWithInt:intervalOneMinutes] forKey:@"intervalTwoSeconds"];
+    [t setValue:[NSNumber numberWithInt:intervalTwoMinutes] forKey:@"intervalTwoMinutes"];
+    [t setValue:[NSNumber numberWithInt:intervalTwoMinutes] forKey:@"intervalTwoSeconds"];
     [t setValue:[NSNumber numberWithInt:laps] forKey:@"laps"];
     [t setValue:[NSNumber numberWithInt:alarmMode] forKey:@"alarmMode"];
     [t setValue:self.timerNameTextField.text forKey:@"name"];
@@ -393,6 +415,8 @@
     }
     
     self.screenTimer = (Timer*)t;
+    screenTimerModified = NO; //reset dirty flag as timer has been freshly saved
+    [self refreshScreen];
     return YES;
 }
 
