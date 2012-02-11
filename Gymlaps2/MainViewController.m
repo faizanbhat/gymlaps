@@ -404,7 +404,6 @@
 #pragma mark - Core Data Methods
 
 
-
 -(void)loadScreenWithTimer:(Timer*)t{
     intervalOneMinutes = [t.intervalOneMinutes intValue];
     intervalOneSeconds = [t.intervalOneSeconds intValue];
@@ -450,7 +449,7 @@
     
     else if (timerSaveMode==timerEditName) {
     
-        if ([self.timerNameTextField.text compare:screenTimer.name]==1) {
+        if (![self.timerNameTextField.text isEqualToString:screenTimer.name]==1) {
 
             screenTimer.name = timerNameTextField.text;
             NSError *error;
@@ -465,7 +464,7 @@
     
     else if (timerSaveMode==timerEditFull) {
         
-        if ([self.timerNameTextField.text compare:screenTimer.name]==1) {
+        if (![self.timerNameTextField.text isEqualToString:screenTimer.name]) {
             t = [NSEntityDescription
                  insertNewObjectForEntityForName:@"Timer" 
                  inManagedObjectContext:context];
