@@ -11,7 +11,7 @@
 @protocol AlarmModePickerControllerDelegate <NSObject>
 
 @required
--(void)alarmModePickerController:(id)controller didExitWithAlarmMode:(int)alarmMode;
+-(void)alarmModePickerController:(id)controller didExitWithAlarmMode:(int)am;
 @end
 
 @class Timer;
@@ -25,8 +25,9 @@
 @property (nonatomic,strong) IBOutlet UISegmentedControl *alarmModeSegmentedControl;
 @property (nonatomic,assign) int selectedIndex;
 @property (weak) id<AlarmModePickerControllerDelegate> delegate;
+
 -(IBAction)done;
--(id)initWithSelectedSegmentedIndex:(int)index;
+-(id)initWithAlarmMode:(int)alarmMode;
 -(id)initWithTimer:(Timer*)timer;
 
 @end

@@ -7,10 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B332E84514E0CAF4006FC0D7 /* Timer.m in Sources */ = {isa = PBXBuildFile; fileRef = B332E84414E0CAF3006FC0D7 /* Timer.m */; };
 		B332E84714E0DBA6006FC0D7 /* IntervalTwoPickerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B332E84614E0DBA6006FC0D7 /* IntervalTwoPickerController.xib */; };
-		B341C7E914E5CACE00ADCBBB /* FolderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B341C7E714E5CACE00ADCBBB /* FolderViewController.m */; };
-		B341C7EA14E5CACE00ADCBBB /* FolderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B341C7E814E5CACE00ADCBBB /* FolderViewController.xib */; };
 		B356CFD414DF3DF9007389CC /* IntervalPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = B356CFD214DF3DF9007389CC /* IntervalPickerController.m */; };
 		B356CFD514DF3DF9007389CC /* IntervalOnePickerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B356CFD314DF3DF9007389CC /* IntervalOnePickerController.xib */; };
 		B356CFD914DF3E06007389CC /* LapsPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = B356CFD714DF3E06007389CC /* LapsPickerController.m */; };
@@ -57,18 +54,14 @@
 		B37EF85914DF2E91001A5C03 /* Warning.png in Resources */ = {isa = PBXBuildFile; fileRef = B37EF84F14DF2E91001A5C03 /* Warning.png */; };
 		B37EF85A14DF2E91001A5C03 /* Warning@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B37EF85014DF2E91001A5C03 /* Warning@2x.png */; };
 		B37EF85C14DF302B001A5C03 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B37EF85B14DF302B001A5C03 /* QuartzCore.framework */; };
-		B3FFA58814E13D5E00FECE03 /* JWFolders.m in Sources */ = {isa = PBXBuildFile; fileRef = B3FFA58314E13D5E00FECE03 /* JWFolders.m */; };
-		B3FFA58914E13D5E00FECE03 /* UIScreen+Scale.m in Sources */ = {isa = PBXBuildFile; fileRef = B3FFA58514E13D5E00FECE03 /* UIScreen+Scale.m */; };
-		B3FFA58A14E13D5E00FECE03 /* UIView+Screenshot.m in Sources */ = {isa = PBXBuildFile; fileRef = B3FFA58714E13D5E00FECE03 /* UIView+Screenshot.m */; };
+		B38E2FD814E5D40C00E35F90 /* noise.png in Resources */ = {isa = PBXBuildFile; fileRef = B38E2FD714E5D40C00E35F90 /* noise.png */; };
+		B3CDB4B114E60F2F009402D4 /* Mute.png in Resources */ = {isa = PBXBuildFile; fileRef = B3CDB4B014E60F2F009402D4 /* Mute.png */; };
+		B3CDB4B514E614D4009402D4 /* Whoosh.caf in Resources */ = {isa = PBXBuildFile; fileRef = B3CDB4B414E614D4009402D4 /* Whoosh.caf */; };
+		B3CDB4BB14E61C10009402D4 /* Timer.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CDB4BA14E61C10009402D4 /* Timer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B332E84314E0CAF3006FC0D7 /* Timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Timer.h; sourceTree = "<group>"; };
-		B332E84414E0CAF3006FC0D7 /* Timer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Timer.m; sourceTree = "<group>"; };
 		B332E84614E0DBA6006FC0D7 /* IntervalTwoPickerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IntervalTwoPickerController.xib; sourceTree = "<group>"; };
-		B341C7E614E5CACE00ADCBBB /* FolderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FolderViewController.h; sourceTree = "<group>"; };
-		B341C7E714E5CACE00ADCBBB /* FolderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FolderViewController.m; sourceTree = "<group>"; };
-		B341C7E814E5CACE00ADCBBB /* FolderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FolderViewController.xib; sourceTree = "<group>"; };
 		B356CFD114DF3DF9007389CC /* IntervalPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntervalPickerController.h; sourceTree = "<group>"; };
 		B356CFD214DF3DF9007389CC /* IntervalPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntervalPickerController.m; sourceTree = "<group>"; };
 		B356CFD314DF3DF9007389CC /* IntervalOnePickerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IntervalOnePickerController.xib; sourceTree = "<group>"; };
@@ -128,12 +121,11 @@
 		B37EF84F14DF2E91001A5C03 /* Warning.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Warning.png; sourceTree = "<group>"; };
 		B37EF85014DF2E91001A5C03 /* Warning@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Warning@2x.png"; sourceTree = "<group>"; };
 		B37EF85B14DF302B001A5C03 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		B3FFA58214E13D5E00FECE03 /* JWFolders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWFolders.h; sourceTree = "<group>"; };
-		B3FFA58314E13D5E00FECE03 /* JWFolders.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWFolders.m; sourceTree = "<group>"; };
-		B3FFA58414E13D5E00FECE03 /* UIScreen+Scale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScreen+Scale.h"; sourceTree = "<group>"; };
-		B3FFA58514E13D5E00FECE03 /* UIScreen+Scale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScreen+Scale.m"; sourceTree = "<group>"; };
-		B3FFA58614E13D5E00FECE03 /* UIView+Screenshot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Screenshot.h"; sourceTree = "<group>"; };
-		B3FFA58714E13D5E00FECE03 /* UIView+Screenshot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Screenshot.m"; sourceTree = "<group>"; };
+		B38E2FD714E5D40C00E35F90 /* noise.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noise.png; sourceTree = "<group>"; };
+		B3CDB4B014E60F2F009402D4 /* Mute.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Mute.png; sourceTree = "<group>"; };
+		B3CDB4B414E614D4009402D4 /* Whoosh.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Whoosh.caf; sourceTree = "<group>"; };
+		B3CDB4B914E61C10009402D4 /* Timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Timer.h; sourceTree = "<group>"; };
+		B3CDB4BA14E61C10009402D4 /* Timer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Timer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,7 +198,6 @@
 		B37EF7E914DED6DB001A5C03 /* Gymlaps2 */ = {
 			isa = PBXGroup;
 			children = (
-				B3FFA58114E13D5E00FECE03 /* JWFolders */,
 				B37EF84514DF2E91001A5C03 /* MKInfoBundle */,
 				B37EF81C14DF2A61001A5C03 /* Assets */,
 				B37EF81414DEDA8F001A5C03 /* SoundEffect */,
@@ -241,8 +232,8 @@
 		B37EF80C14DED9D6001A5C03 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				B332E84314E0CAF3006FC0D7 /* Timer.h */,
-				B332E84414E0CAF3006FC0D7 /* Timer.m */,
+				B3CDB4B914E61C10009402D4 /* Timer.h */,
+				B3CDB4BA14E61C10009402D4 /* Timer.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -268,6 +259,8 @@
 		B37EF81C14DF2A61001A5C03 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				B3CDB4B014E60F2F009402D4 /* Mute.png */,
+				B38E2FD714E5D40C00E35F90 /* noise.png */,
 				B37EF83314DF2AB6001A5C03 /* Default@2x.png */,
 				B37EF81D14DF2A6E001A5C03 /* icon.png */,
 				B37EF81E14DF2A6E001A5C03 /* icon@2x.png */,
@@ -280,6 +273,7 @@
 				B37EF82B14DF2A90001A5C03 /* Click.caf */,
 				B37EF82C14DF2A90001A5C03 /* End.caf */,
 				B37EF82D14DF2A90001A5C03 /* Start.caf */,
+				B3CDB4B414E614D4009402D4 /* Whoosh.caf */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
@@ -300,22 +294,6 @@
 				B37EF85014DF2E91001A5C03 /* Warning@2x.png */,
 			);
 			path = MKInfoBundle;
-			sourceTree = "<group>";
-		};
-		B3FFA58114E13D5E00FECE03 /* JWFolders */ = {
-			isa = PBXGroup;
-			children = (
-				B3FFA58214E13D5E00FECE03 /* JWFolders.h */,
-				B3FFA58314E13D5E00FECE03 /* JWFolders.m */,
-				B3FFA58414E13D5E00FECE03 /* UIScreen+Scale.h */,
-				B3FFA58514E13D5E00FECE03 /* UIScreen+Scale.m */,
-				B3FFA58614E13D5E00FECE03 /* UIView+Screenshot.h */,
-				B3FFA58714E13D5E00FECE03 /* UIView+Screenshot.m */,
-				B341C7E614E5CACE00ADCBBB /* FolderViewController.h */,
-				B341C7E714E5CACE00ADCBBB /* FolderViewController.m */,
-				B341C7E814E5CACE00ADCBBB /* FolderViewController.xib */,
-			);
-			path = JWFolders;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -397,7 +375,9 @@
 				B356CFDF14DF3E1D007389CC /* BeepModePickerController.xib in Resources */,
 				B356CFE414DF3E27007389CC /* AlarmModePickerController.xib in Resources */,
 				B332E84714E0DBA6006FC0D7 /* IntervalTwoPickerController.xib in Resources */,
-				B341C7EA14E5CACE00ADCBBB /* FolderViewController.xib in Resources */,
+				B38E2FD814E5D40C00E35F90 /* noise.png in Resources */,
+				B3CDB4B114E60F2F009402D4 /* Mute.png in Resources */,
+				B3CDB4B514E614D4009402D4 /* Whoosh.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,11 +400,7 @@
 				B356CFD914DF3E06007389CC /* LapsPickerController.m in Sources */,
 				B356CFDE14DF3E1D007389CC /* BeepModePickerController.m in Sources */,
 				B356CFE314DF3E27007389CC /* AlarmModePickerController.m in Sources */,
-				B332E84514E0CAF4006FC0D7 /* Timer.m in Sources */,
-				B3FFA58814E13D5E00FECE03 /* JWFolders.m in Sources */,
-				B3FFA58914E13D5E00FECE03 /* UIScreen+Scale.m in Sources */,
-				B3FFA58A14E13D5E00FECE03 /* UIView+Screenshot.m in Sources */,
-				B341C7E914E5CACE00ADCBBB /* FolderViewController.m in Sources */,
+				B3CDB4BB14E61C10009402D4 /* Timer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -23,9 +23,9 @@
     return self;
 }
 
-- (id)initWithSelectedSegmentedIndex:(int)index{
+- (id)initWithAlarmMode:(int)alarmMode{
     if (self = [self initWithNibName:@"AlarmModePickerController" bundle:nil]) {
-		self.selectedIndex = index;
+		self.selectedIndex = alarmMode;
         return self;
     }
     return nil;
@@ -35,7 +35,7 @@
     
     if (self = [self initWithNibName:@"AlarmModePickerController" bundle:nil]) 
         {
-            switch ([timer.alarm intValue]) {
+            switch ([timer.alarmMode intValue]) {
                 case 1:
                     self.selectedIndex = 0;
                     break;
@@ -56,12 +56,8 @@
 
 -(IBAction)done {
 	
-    int modes[3];
-    modes[0]=1;
-    modes[1]=5;
-    modes[2]=10;
     if ([self.delegate respondsToSelector:@selector(alarmModePickerController:didExitWithAlarmMode:)]) {
-        [self.delegate alarmModePickerController:self didExitWithAlarmMode:(modes[self.alarmModeSegmentedControl.selectedSegmentIndex])];
+        [self.delegate alarmModePickerController:self didExitWithAlarmMode:self.alarmModeSegmentedControl.selectedSegmentIndex];
     }        
 }
 

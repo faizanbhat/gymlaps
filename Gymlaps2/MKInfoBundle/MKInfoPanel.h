@@ -27,11 +27,11 @@ typedef enum {
 
 @interface MKInfoPanel : UIView {
     
-    UILabel *_titleLabel;
-    UILabel *_detailLabel;
+    __weak UILabel *_titleLabel;
+    __weak UILabel *_detailLabel;
     
-    UIImageView *_thumbImage;
-    UIImageView *_backgroundGradient;
+    __weak UIImageView *_thumbImage;
+    __weak UIImageView *_backgroundGradient;
     
     SEL _onTouched;
     
@@ -41,10 +41,10 @@ typedef enum {
     MKInfoPanelType type_;
 }
 
-@property (strong, nonatomic) IBOutlet UILabel *titleLabel;
-@property (strong, nonatomic) IBOutlet UILabel *detailLabel;
-@property (strong, nonatomic) IBOutlet UIImageView *thumbImage;
-@property (strong, nonatomic) IBOutlet UIImageView *backgroundGradient;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *detailLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *thumbImage;
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundGradient;
 @property (nonatomic, assign) SEL onTouched;
 @property (weak) id delegate;
 @property (nonatomic, assign) SEL onFinished;

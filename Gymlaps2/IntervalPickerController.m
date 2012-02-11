@@ -58,9 +58,9 @@
 
 - (id)initWithTimer:(Timer*)timer andInterval:(int)interval{
     if (interval==1)
-        return [self initWithMinutes:[timer.intervalOneMins intValue] seconds:[timer.intervalOneSecs intValue] andInterval:1];
+        return [self initWithMinutes:[timer.intervalOneMinutes intValue] seconds:[timer.intervalOneSeconds intValue] andInterval:1];
     else if (interval==2)
-        return [self initWithMinutes:[timer.intervalTwoMins intValue] seconds:[timer.intervalTwoSecs intValue] andInterval:2];
+        return [self initWithMinutes:[timer.intervalTwoMinutes intValue] seconds:[timer.intervalTwoSeconds intValue] andInterval:2];
     else
         return nil;
 }
@@ -131,7 +131,7 @@
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
 	
-	return 61;
+	return 60;
 }
 
 

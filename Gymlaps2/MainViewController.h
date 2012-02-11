@@ -9,6 +9,12 @@
 #import "FlipsideViewController.h"
 #import <CoreData/CoreData.h>
 #import "TouchableLabel.h"
+#import "Timer.h"
+#import "IntervalPickerController.h"
+#import "AlarmModePickerController.h"
+#import "LapsPickerController.h"
+#import "BeepModePickerController.h"
+#import "MKInfoPanel.h"
 
 // beep mode
 #define beepModeBeepHigh 0
@@ -32,10 +38,12 @@
 #define stagealarmtwopaused 8
 #define stagealarmend 9
 
-@class IntervalPickerController,BeepModePickerController,AlarmModePickerController,LapsPickerController, SoundEffect;
+@class BeepModePickerController,AlarmModePickerController,LapsPickerController, SoundEffect;
 
-@interface MainViewController : UIViewController <FlipsideViewControllerDelegate,TouchableLabelDelegate> {
+@interface MainViewController : UIViewController <FlipsideViewControllerDelegate,TouchableLabelDelegate,IntervalPickerControllerDelegate, AlarmModePickerControllerDelegate, LapsPickerControllerDelegate, BeepModePickerControllerDelegate> {
     
+    UIView *screen;
+
     TouchableLabel *numberOfLapsLabel;
 	TouchableLabel *alarmModeLabel;
 	TouchableLabel *intervalOneMinutesLabel;
@@ -43,16 +51,8 @@
 	TouchableLabel *intervalTwoMinutesLabel;
 	TouchableLabel *intervalTwoSecondsLabel;
 	TouchableLabel *beepModeLabel;
-	
-	IntervalPickerController *intervalOnePickerController;
-	IntervalPickerController *intervalTwoPickerController;
-	BeepModePickerController *beepModeController;
-	AlarmModePickerController *alarmModeController;
-	LapsPickerController *numberOfLapsController;
-	
-	
+		
 	UIButton *infoButton;
-	UIButton *setListButton;
 	UIButton *startButton;
 	UIButton *resetButton;
 	
@@ -73,6 +73,7 @@
 	SoundEffect *startSound;
 	SoundEffect *errorSound;
     SoundEffect *endAlarm;
+    SoundEffect *whooshSound;
     
 	int timerSeconds;
 	int alarmCount;
@@ -80,9 +81,21 @@
 	int currentLap;
 	int currentstage;
 
+    // The screenTimer variable is here only for loading and saving timers
+    Timer *screenTimer;
+    
+    BOOL saveScreenShowing; //Whether saveScreen is being shown
+    
+    BOOL screenTimerModified; // Whether timer on screen has been edited without saving
+    
 }
 
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (strong, nonatomic) IBOutlet UIView *screen;
+@property (strong, nonatomic) IBOutlet UIView *saveScreen;
+@property (strong, nonatomic) IBOutlet UITextField *timerNameTextField;
+@property (strong, nonatomic) IBOutlet UIButton *cancelSaveButton;
+
 @property (strong, nonatomic) IBOutlet TouchableLabel *numberOfLapsLabel;
 @property (strong, nonatomic) IBOutlet TouchableLabel *alarmModeLabel;
 @property (strong, nonatomic) IBOutlet TouchableLabel *beepModeLabel;
@@ -103,10 +116,23 @@
 @property (strong, nonatomic) SoundEffect *startSound;
 @property (strong, nonatomic) SoundEffect *errorSound;
 @property (strong, nonatomic) SoundEffect *endAlarm;
+@property (strong, nonatomic) SoundEffect *whooshSound;
+@property (strong, nonatomic) Timer *screenTimer;
 
 - (IBAction)showInfo:(id)sender;
 -(void)editLabel:(id)label;
 -(void)setTouchesEnabled:(BOOL)isEnabled;
-- (IBAction)longTap:(id)sender;
+- (IBAction)longTap:(UIGestureRecognizer*)sender;
+
+-(void)intervalPickerController:(id)controller didExitWithMins:(int)mins andSecs:(int)secs forInterval:(int)interval;
+-(void)alarmModePickerController:(id)controller didExitWithAlarmMode:(int)am;
+-(void)lapsPickerController:(id)controller didExitWithLaps:(int)l;
+-(void)beepModePickerController:(id)controller didExitWithBeepMode:(int)bm;
+-(BOOL)saveOnscreenTimer;
+-(void)refreshScreen;
+-(void)showSaveScreen;
+-(void)hideSaveScreen;
+-(void)loadScreenWithTimer:(Timer*)t;
+-(void)showError:(NSString*)error withSubtitle:(NSString*)subtitle;
 
 @end

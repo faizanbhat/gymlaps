@@ -9,15 +9,23 @@
 #import "BeepModePickerController.h"
 
 @implementation BeepModePickerController
+@synthesize delegate=_delegate,beepModeSegmentedControl=_beepModeSegmentedControl,selectedIndex=_selectedIndex;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
+- (id)initWithBeepMode:(int)beepMode{
+    if (self = [super initWithNibName:@"BeepModePickerController" bundle:nil]) {
+		self.selectedIndex = beepMode;
     }
     return self;
 }
+
+-(IBAction)done {
+	
+    if ([self.delegate respondsToSelector:@selector(beepModePickerController:didExitWithBeepMode:)]) {
+	
+        [self.delegate beepModePickerController:self didExitWithBeepMode:[self.beepModeSegmentedControl selectedSegmentIndex]];
+    }
+}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -32,6 +40,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.beepModeSegmentedControl setSelectedSegmentIndex:self.selectedIndex];
+
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -45,7 +55,7 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    return (interfaceOrientation == UIInterfaceOrientationLandscapeLeft || interfaceOrientation == UIInterfaceOrientationLandscapeRight);
 }
 
 @end

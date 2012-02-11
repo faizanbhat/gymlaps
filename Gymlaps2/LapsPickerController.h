@@ -10,7 +10,7 @@
 @protocol LapsPickerControllerDelegate <NSObject>
 
 @required
--(void)lapsPickerController:(id)controller didExitWithLaps:(int)laps;
+-(void)lapsPickerController:(id)controller didExitWithLaps:(int)l;
 @end
 
 @class Timer;
