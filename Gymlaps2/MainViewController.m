@@ -403,7 +403,7 @@
     [t setValue:[NSNumber numberWithInt:intervalOneMinutes] forKey:@"intervalOneMinutes"];
     [t setValue:[NSNumber numberWithInt:intervalOneSeconds] forKey:@"intervalOneSeconds"];
     [t setValue:[NSNumber numberWithInt:intervalTwoMinutes] forKey:@"intervalTwoMinutes"];
-    [t setValue:[NSNumber numberWithInt:intervalTwoMinutes] forKey:@"intervalTwoSeconds"];
+    [t setValue:[NSNumber numberWithInt:intervalTwoSeconds] forKey:@"intervalTwoSeconds"];
     [t setValue:[NSNumber numberWithInt:laps] forKey:@"laps"];
     [t setValue:[NSNumber numberWithInt:alarmMode] forKey:@"alarmMode"];
     [t setValue:self.timerNameTextField.text forKey:@"name"];
