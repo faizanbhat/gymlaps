@@ -43,6 +43,7 @@
 	alarms[2] = 10;
 	
     saveScreenShowing = NO;
+    screenTimerModified = NO;
     
 	beepMode = beepModeBeepHigh;
 	alarmMode = alarmMode1sec;
@@ -103,6 +104,13 @@
 		numberOfLapsLabel.text = [NSString stringWithFormat:@"00"];
 	else
         numberOfLapsLabel.text = [NSString stringWithFormat:@"%d",laps];
+    
+    // if a saved timer has been modified since last screen refresh, change color to indicate dirty timer
+    if (screenTimerModified && self.screenTimer!=nil)
+        self.setListLabel.textColor = [UIColor redColor];    
+    else
+        self.setListLabel.textColor = [UIColor blackColor];    
+
 }
 
 #pragma mark - TODO: Make sure SaveScreen is disabled when timer is running
@@ -226,7 +234,7 @@
         for (NSManagedObject *info in fetchedObjects) {
             NSLog(@"Name: %@", [info valueForKey:@"name"]);
         }                
-        [self loadScreenWithTimer:[fetchedObjects objectAtIndex:0]];
+        [self loadScreenWithTimer:[fetchedObjects objectAtIndex:([fetchedObjects count]-1)]];
     }
     
 }
@@ -296,7 +304,6 @@
         setListLabel.text = self.screenTimer.name;
     }
     
-    
     [self hideSaveScreen];
 }
 
@@ -315,7 +322,7 @@
 		intervalTwoMinutes = mins;
 		intervalTwoSeconds = secs;		
 	}
-	
+	screenTimerModified = YES;
     [self refreshScreen];
     [self dismissModalViewControllerAnimated:YES];
 }
@@ -323,6 +330,8 @@
 -(void)alarmModePickerController:(id)controller didExitWithAlarmMode:(int)am {
     
     alarmMode = am;
+    screenTimerModified = YES;
+
     [self refreshScreen];
     [self dismissModalViewControllerAnimated:YES];
 }
@@ -330,9 +339,9 @@
 -(void)lapsPickerController:(id)controller didExitWithLaps:(int)l {
     
     laps = l;
-
-    [self refreshScreen];
+	screenTimerModified = YES;
     
+    [self refreshScreen];
     [self dismissModalViewControllerAnimated:YES];
     
 }
@@ -357,6 +366,9 @@
     alarmMode = [t.alarmMode intValue];
     self.setListLabel.text = t.name;
     self.screenTimer = t;
+    
+    // clear the dirty timer flag
+    screenTimerModified = NO;
     [self refreshScreen];
 }
 
@@ -380,7 +392,7 @@
         return NO;
     }
     
-    self.screenTimer = t;
+    self.screenTimer = (Timer*)t;
     return YES;
 }
 
