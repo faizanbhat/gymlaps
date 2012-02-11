@@ -18,5 +18,15 @@
 @dynamic intervalTwoSeconds;
 @dynamic laps;
 @dynamic name;
+@dynamic uuid;
+@dynamic desc;
+
+- (void)awakeFromInsert;
+{
+    [super awakeFromInsert];
+    CFUUIDRef UUID = CFUUIDCreate(kCFAllocatorDefault);
+    CFStringRef UUIDString = CFUUIDCreateString(kCFAllocatorDefault,UUID);
+    [self setValue:(__bridge NSString *)UUIDString forKey:@"uuid"];
+}
 
 @end

@@ -57,8 +57,8 @@
 		B38E2FD814E5D40C00E35F90 /* noise.png in Resources */ = {isa = PBXBuildFile; fileRef = B38E2FD714E5D40C00E35F90 /* noise.png */; };
 		B3CDB4B114E60F2F009402D4 /* Mute.png in Resources */ = {isa = PBXBuildFile; fileRef = B3CDB4B014E60F2F009402D4 /* Mute.png */; };
 		B3CDB4B514E614D4009402D4 /* Whoosh.caf in Resources */ = {isa = PBXBuildFile; fileRef = B3CDB4B414E614D4009402D4 /* Whoosh.caf */; };
-		B3CDB4BB14E61C10009402D4 /* Timer.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CDB4BA14E61C10009402D4 /* Timer.m */; };
 		B3CDB4D814E630FE009402D4 /* Glass.caf in Resources */ = {isa = PBXBuildFile; fileRef = B3CDB4D714E630FE009402D4 /* Glass.caf */; };
+		B3CDB4DB14E65301009402D4 /* Timer.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CDB4DA14E65301009402D4 /* Timer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -125,9 +125,9 @@
 		B38E2FD714E5D40C00E35F90 /* noise.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noise.png; sourceTree = "<group>"; };
 		B3CDB4B014E60F2F009402D4 /* Mute.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Mute.png; sourceTree = "<group>"; };
 		B3CDB4B414E614D4009402D4 /* Whoosh.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Whoosh.caf; sourceTree = "<group>"; };
-		B3CDB4B914E61C10009402D4 /* Timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Timer.h; sourceTree = "<group>"; };
-		B3CDB4BA14E61C10009402D4 /* Timer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Timer.m; sourceTree = "<group>"; };
 		B3CDB4D714E630FE009402D4 /* Glass.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Glass.caf; sourceTree = "<group>"; };
+		B3CDB4D914E65301009402D4 /* Timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Timer.h; sourceTree = "<group>"; };
+		B3CDB4DA14E65301009402D4 /* Timer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Timer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,8 +234,8 @@
 		B37EF80C14DED9D6001A5C03 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				B3CDB4B914E61C10009402D4 /* Timer.h */,
-				B3CDB4BA14E61C10009402D4 /* Timer.m */,
+				B3CDB4D914E65301009402D4 /* Timer.h */,
+				B3CDB4DA14E65301009402D4 /* Timer.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -404,7 +404,7 @@
 				B356CFD914DF3E06007389CC /* LapsPickerController.m in Sources */,
 				B356CFDE14DF3E1D007389CC /* BeepModePickerController.m in Sources */,
 				B356CFE314DF3E27007389CC /* AlarmModePickerController.m in Sources */,
-				B3CDB4BB14E61C10009402D4 /* Timer.m in Sources */,
+				B3CDB4DB14E65301009402D4 /* Timer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

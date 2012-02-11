@@ -336,42 +336,55 @@
 -(void)intervalPickerController:(id)controller didExitWithMins:(int)mins andSecs:(int)secs forInterval:(int)interval {
 
     if (interval == 1) {
-		intervalOneMinutes = mins;
-		intervalOneSeconds = secs;		
+        if(intervalOneMinutes!=mins || intervalOneSeconds!=secs) {
+            screenTimerModified = YES;
+            intervalOneMinutes = mins;
+            intervalOneSeconds = secs;	
+            [self refreshScreen];
+        }
 	}
     
     else if (interval == 2) {
-		intervalTwoMinutes = mins;
-		intervalTwoSeconds = secs;		
+        if(intervalTwoMinutes!=mins || intervalTwoSeconds!=secs) {
+            screenTimerModified = YES;
+            intervalTwoMinutes = mins;
+            intervalTwoSeconds = secs;	
+            [self refreshScreen];
+        }
 	}
-	screenTimerModified = YES;
-    [self refreshScreen];
+    
     [self dismissModalViewControllerAnimated:YES];
 }
 
 -(void)alarmModePickerController:(id)controller didExitWithAlarmMode:(int)am {
     
-    alarmMode = am;
-    screenTimerModified = YES;
-
-    [self refreshScreen];
+    if (alarmMode!=am){
+        alarmMode = am;
+        screenTimerModified = YES;
+        [self refreshScreen];
+    }
+    
     [self dismissModalViewControllerAnimated:YES];
 }
 
 -(void)lapsPickerController:(id)controller didExitWithLaps:(int)l {
     
-    laps = l;
-	screenTimerModified = YES;
+    if(laps!=l) {
+        laps = l;
+        screenTimerModified = YES;
+        [self refreshScreen];
+    }
     
-    [self refreshScreen];
     [self dismissModalViewControllerAnimated:YES];
     
 }
 
 - (void)beepModePickerController:(id)controller didExitWithBeepMode:(int)bm {
-    beepMode = bm;
-
-    [self refreshScreen];
+    
+    if (beepMode!=bm) {
+        beepMode = bm;
+        [self refreshScreen];
+    }
     
     [self dismissModalViewControllerAnimated:YES];
 }

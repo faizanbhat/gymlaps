@@ -19,5 +19,7 @@
 @property (nonatomic, retain) NSNumber * intervalTwoSeconds;
 @property (nonatomic, retain) NSNumber * laps;
 @property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSString * uuid;
+@property (nonatomic, retain) NSString * desc;
 
 @end

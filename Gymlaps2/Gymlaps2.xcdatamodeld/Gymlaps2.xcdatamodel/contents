@@ -2,12 +2,14 @@
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="878" systemVersion="11C74" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Timer" representedClassName="Timer" syncable="YES">
         <attribute name="alarmMode" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="intervalOneMinutes" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="intervalOneSeconds" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="intervalTwoMinutes" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="intervalTwoSeconds" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="laps" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="name" attributeType="String" minValueString="1" syncable="YES"/>
+        <attribute name="uuid" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
         <element name="Timer" positionX="160" positionY="192" width="128" height="165"/>
