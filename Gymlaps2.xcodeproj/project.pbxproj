@@ -57,7 +57,6 @@
 		B38E2FD814E5D40C00E35F90 /* noise.png in Resources */ = {isa = PBXBuildFile; fileRef = B38E2FD714E5D40C00E35F90 /* noise.png */; };
 		B3CDB4B114E60F2F009402D4 /* Mute.png in Resources */ = {isa = PBXBuildFile; fileRef = B3CDB4B014E60F2F009402D4 /* Mute.png */; };
 		B3CDB4B514E614D4009402D4 /* Whoosh.caf in Resources */ = {isa = PBXBuildFile; fileRef = B3CDB4B414E614D4009402D4 /* Whoosh.caf */; };
-		B3CDB4D814E630FE009402D4 /* Glass.caf in Resources */ = {isa = PBXBuildFile; fileRef = B3CDB4D714E630FE009402D4 /* Glass.caf */; };
 		B3CDB4DB14E65301009402D4 /* Timer.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CDB4DA14E65301009402D4 /* Timer.m */; };
 /* End PBXBuildFile section */
 
@@ -125,7 +124,6 @@
 		B38E2FD714E5D40C00E35F90 /* noise.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noise.png; sourceTree = "<group>"; };
 		B3CDB4B014E60F2F009402D4 /* Mute.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Mute.png; sourceTree = "<group>"; };
 		B3CDB4B414E614D4009402D4 /* Whoosh.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Whoosh.caf; sourceTree = "<group>"; };
-		B3CDB4D714E630FE009402D4 /* Glass.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Glass.caf; sourceTree = "<group>"; };
 		B3CDB4D914E65301009402D4 /* Timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Timer.h; sourceTree = "<group>"; };
 		B3CDB4DA14E65301009402D4 /* Timer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Timer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -261,7 +259,6 @@
 		B37EF81C14DF2A61001A5C03 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				B3CDB4D714E630FE009402D4 /* Glass.caf */,
 				B3CDB4B014E60F2F009402D4 /* Mute.png */,
 				B38E2FD714E5D40C00E35F90 /* noise.png */,
 				B37EF83314DF2AB6001A5C03 /* Default@2x.png */,
@@ -381,7 +378,6 @@
 				B38E2FD814E5D40C00E35F90 /* noise.png in Resources */,
 				B3CDB4B114E60F2F009402D4 /* Mute.png in Resources */,
 				B3CDB4B514E614D4009402D4 /* Whoosh.caf in Resources */,
-				B3CDB4D814E630FE009402D4 /* Glass.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

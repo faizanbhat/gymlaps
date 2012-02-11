@@ -272,7 +272,7 @@
 									<int key="type">1</int>
 									<double key="pointSize">17</double>
 								</object>
-								<object class="NSFont" key="IBUIFont" id="660379793">
+								<object class="NSFont" key="IBUIFont" id="902021760">
 									<string key="NSName">Helvetica</string>
 									<double key="NSSize">17</double>
 									<int key="NSfFlags">16</int>
@@ -470,7 +470,7 @@
 								</object>
 								<int key="IBUIClearButtonMode">3</int>
 								<reference key="IBUIFontDescription" ref="341411609"/>
-								<reference key="IBUIFont" ref="660379793"/>
+								<reference key="IBUIFont" ref="902021760"/>
 							</object>
 							<object class="IBUITextField" id="888420695">
 								<reference key="NSNextResponder" ref="639424765"/>
@@ -503,7 +503,7 @@
 								</object>
 								<int key="IBUIClearButtonMode">3</int>
 								<reference key="IBUIFontDescription" ref="341411609"/>
-								<reference key="IBUIFont" ref="660379793"/>
+								<reference key="IBUIFont" ref="902021760"/>
 							</object>
 							<object class="IBUIButton" id="752312519">
 								<reference key="NSNextResponder" ref="639424765"/>
@@ -513,7 +513,7 @@
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="624855151"/>
 								<string key="NSReuseIdentifierKey">_NS:225</string>
-								<object class="NSColor" key="IBUIBackgroundColor">
+								<object class="NSColor" key="IBUIBackgroundColor" id="382030081">
 									<int key="NSColorSpace">3</int>
 									<bytes key="NSWhite">MCAwAA</bytes>
 								</object>
@@ -539,7 +539,7 @@
 									<int key="NSfFlags">16</int>
 								</object>
 							</object>
-							<object class="IBUILabel" id="990384826">
+							<object class="IBUILabel" id="213539047">
 								<reference key="NSNextResponder" ref="639424765"/>
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{17, 0}, {232, 21}}</string>
@@ -574,9 +574,9 @@
 						<string key="NSFrame">{{53, 54}, {382, 160}}</string>
 						<reference key="NSSuperview" ref="883825266"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="990384826"/>
+						<reference key="NSNextKeyView" ref="213539047"/>
 						<string key="NSReuseIdentifierKey">_NS:196</string>
-						<reference key="IBUIBackgroundColor" ref="227474066"/>
+						<reference key="IBUIBackgroundColor" ref="382030081"/>
 						<float key="IBUIAlpha">0.0</float>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 					</object>
@@ -744,7 +744,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">timerSaveLabel</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="990384826"/>
+						<reference key="destination" ref="213539047"/>
 					</object>
 					<int key="connectionID">112</int>
 				</object>
@@ -939,7 +939,7 @@
 							<reference ref="752312519"/>
 							<reference ref="888420695"/>
 							<reference ref="269804398"/>
-							<reference ref="990384826"/>
+							<reference ref="213539047"/>
 						</array>
 						<reference key="parent" ref="883825266"/>
 					</object>
@@ -960,7 +960,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">111</int>
-						<reference key="object" ref="990384826"/>
+						<reference key="object" ref="213539047"/>
 						<reference key="parent" ref="639424765"/>
 					</object>
 				</array>

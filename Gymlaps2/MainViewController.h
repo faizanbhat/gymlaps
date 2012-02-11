@@ -76,10 +76,9 @@
     
 	SoundEffect *intervalAlarm;
 	SoundEffect *startSound;
-	SoundEffect *errorSound;
+	SoundEffect *alertSound;
     SoundEffect *endAlarm;
     SoundEffect *whooshSound;
-    SoundEffect *okSound;
     
 	int timerSeconds;
 	int alarmCount;
@@ -123,10 +122,9 @@
 
 @property (strong, nonatomic) SoundEffect *intervalAlarm;
 @property (strong, nonatomic) SoundEffect *startSound;
-@property (strong, nonatomic) SoundEffect *errorSound;
+@property (strong, nonatomic) SoundEffect *alertSound;
 @property (strong, nonatomic) SoundEffect *endAlarm;
 @property (strong, nonatomic) SoundEffect *whooshSound;
-@property (strong, nonatomic) SoundEffect *okSound;
 
 @property (strong, nonatomic) Timer *screenTimer;
 

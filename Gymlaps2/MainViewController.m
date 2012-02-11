@@ -18,7 +18,7 @@
 @synthesize numberOfLapsLabel, alarmModeLabel, intervalOneMinutesLabel, intervalOneSecondsLabel, intervalTwoMinutesLabel, intervalTwoSecondsLabel, beepModeLabel, setListLabel;
 @synthesize infoButton, startButton, resetButton;
 @synthesize intervalTimer, alarmTimer;
-@synthesize intervalAlarm, startSound, errorSound, endAlarm, whooshSound, okSound;
+@synthesize intervalAlarm, startSound, alertSound, endAlarm, whooshSound;
 @synthesize screenTimer;
 
 - (void)didReceiveMemoryWarning
@@ -62,10 +62,9 @@
 	
 	self.intervalAlarm = [SoundEffect soundEffectForResourceName:@"BH" ofType:@"caf"];
 	self.startSound = [SoundEffect soundEffectForResourceName:@"Start" ofType:@"caf"];
-	self.errorSound = [SoundEffect soundEffectForResourceName:@"Bottle" ofType:@"caf"];
+	self.alertSound = [SoundEffect soundEffectForResourceName:@"Bottle" ofType:@"caf"];
 	self.endAlarm = [SoundEffect soundEffectForResourceName:@"End" ofType:@"caf"];
     self.whooshSound = [SoundEffect soundEffectForResourceName:@"Whoosh" ofType:@"caf"];
-    self.okSound = [SoundEffect soundEffectForResourceName:@"Glass" ofType:@"caf"];
 
 	// enable touches
     
@@ -109,7 +108,6 @@
     // if a saved timer has been modified since last screen refresh, change color to indicate dirty timer
     if (self.screenTimer!=nil) {
         
-        
         setListLabel.text = self.screenTimer.name;
         
         if (screenTimerModified) {
@@ -125,14 +123,10 @@
             else
                 self.setListLabel.textColor = [UIColor redColor];  
         }
-        
-        
+
         else
             self.setListLabel.textColor = [UIColor blackColor];   
     }
-
-     
-
 }
 
 #pragma mark - TODO: Make sure SaveScreen is disabled when timer is running
@@ -301,8 +295,11 @@
     // set label text based on timerSaveMode
     NSArray *array  = [NSArray arrayWithObjects:@"SAVE NEW TIMER", @"RENAME UNMODIFIED TIMER", @"SAVE MODIFIED TIMER",nil];
     self.timerSaveLabel.text = [array objectAtIndex:timerSaveMode];
-       
+    
     screen.alpha = 0.0;    
+    if (timerSaveMode==timerEditName||timerSaveMode==timerEditFull) {
+        self.timerNameTextField.text = screenTimer.name;
+    }
     
     [UIView beginAnimations:@"Save Screen in" context:nil];
     [UIView setAnimationDuration:0.50];
@@ -338,7 +335,7 @@
     BOOL saved = [self saveOnscreenTimer];
     
     if (saved) {
-        [self showInfo:@"Saved!" withSubtitle:nil];
+        NSLog(@"saved");
     }
     
     [self hideSaveScreen];
@@ -425,24 +422,88 @@
 -(BOOL)saveOnscreenTimer{
     
     NSManagedObjectContext *context = [self managedObjectContext];
-    NSManagedObject *t = [NSEntityDescription
-                                       insertNewObjectForEntityForName:@"Timer" 
-                                       inManagedObjectContext:context];
-    [t setValue:[NSNumber numberWithInt:intervalOneMinutes] forKey:@"intervalOneMinutes"];
-    [t setValue:[NSNumber numberWithInt:intervalOneSeconds] forKey:@"intervalOneSeconds"];
-    [t setValue:[NSNumber numberWithInt:intervalTwoMinutes] forKey:@"intervalTwoMinutes"];
-    [t setValue:[NSNumber numberWithInt:intervalTwoSeconds] forKey:@"intervalTwoSeconds"];
-    [t setValue:[NSNumber numberWithInt:laps] forKey:@"laps"];
-    [t setValue:[NSNumber numberWithInt:alarmMode] forKey:@"alarmMode"];
-    [t setValue:self.timerNameTextField.text forKey:@"name"];
+    NSManagedObject *t;
+    
+    if (timerSaveMode==timerSaveNew) {
+        t = [NSEntityDescription
+                                           insertNewObjectForEntityForName:@"Timer" 
+                                           inManagedObjectContext:context];
+        [t setValue:[NSNumber numberWithInt:intervalOneMinutes] forKey:@"intervalOneMinutes"];
+        [t setValue:[NSNumber numberWithInt:intervalOneSeconds] forKey:@"intervalOneSeconds"];
+        [t setValue:[NSNumber numberWithInt:intervalTwoMinutes] forKey:@"intervalTwoMinutes"];
+        [t setValue:[NSNumber numberWithInt:intervalTwoSeconds] forKey:@"intervalTwoSeconds"];
+        [t setValue:[NSNumber numberWithInt:laps] forKey:@"laps"];
+        [t setValue:[NSNumber numberWithInt:alarmMode] forKey:@"alarmMode"];
+        [t setValue:self.timerNameTextField.text forKey:@"name"];
 
-    NSError *error;
-    if (![context save:&error]) {
-        [self showError:@"Whoops, couldn't save!" withSubtitle:[error localizedDescription]];
-        return NO;
+        NSError *error;
+        if (![context save:&error]) {
+            [self showError:@"Whoops, couldn't save!" withSubtitle:[error localizedDescription]];
+            return NO;
+        }
+        
+        self.screenTimer = (Timer*)t;
+        [self showInfo:@"Timer Saved!" withSubtitle:nil];
+
     }
     
-    self.screenTimer = (Timer*)t;
+    else if (timerSaveMode==timerEditName) {
+    
+        screenTimer.name = timerNameTextField.text;
+        NSError *error;
+        if (![context save:&error]) {
+            [self showError:@"Whoops, couldn't rename!" withSubtitle:[error localizedDescription]];
+            return NO;
+        }       
+        
+        [self showInfo:@"Timer Renamed!" withSubtitle:nil];
+
+        
+    }
+    
+    else if (timerSaveMode==timerEditFull) {
+        
+        if ([self.timerNameTextField.text compare:screenTimer.name]==1) {
+            t = [NSEntityDescription
+                 insertNewObjectForEntityForName:@"Timer" 
+                 inManagedObjectContext:context];
+            [t setValue:[NSNumber numberWithInt:intervalOneMinutes] forKey:@"intervalOneMinutes"];
+            [t setValue:[NSNumber numberWithInt:intervalOneSeconds] forKey:@"intervalOneSeconds"];
+            [t setValue:[NSNumber numberWithInt:intervalTwoMinutes] forKey:@"intervalTwoMinutes"];
+            [t setValue:[NSNumber numberWithInt:intervalTwoSeconds] forKey:@"intervalTwoSeconds"];
+            [t setValue:[NSNumber numberWithInt:laps] forKey:@"laps"];
+            [t setValue:[NSNumber numberWithInt:alarmMode] forKey:@"alarmMode"];
+            [t setValue:self.timerNameTextField.text forKey:@"name"];
+            
+            NSError *error;
+            if (![context save:&error]) {
+                [self showError:@"Whoops, couldn't save!" withSubtitle:[error localizedDescription]];
+                return NO;
+            }
+            
+            [self showInfo:@"Timer Saved!" withSubtitle:@"GYMLAPS saved a new timer"];
+            self.screenTimer = (Timer*)t;
+        }
+        
+        else {
+            screenTimer.intervalOneMinutes = [NSNumber numberWithInt:intervalOneMinutes];
+            screenTimer.intervalOneSeconds = [NSNumber numberWithInt:intervalOneSeconds];
+            screenTimer.intervalTwoMinutes = [NSNumber numberWithInt:intervalTwoMinutes];
+            screenTimer.intervalTwoSeconds = [NSNumber numberWithInt:intervalTwoSeconds];
+            screenTimer.laps = [NSNumber numberWithInt:laps];
+            screenTimer.alarmMode = [NSNumber numberWithInt:alarmMode];
+            // no need to change name
+            NSError *error;
+            if (![context save:&error]) {
+                [self showError:@"Whoops, couldn't save!" withSubtitle:[error localizedDescription]];
+                return NO;
+        }
+        
+        [self showInfo:@"Timer Updated!" withSubtitle:@"GYMLAPS updated the existing timer because its name wasn't changed"];
+        }
+    }
+    
+    
     screenTimerModified = NO; //reset dirty flag as timer has been freshly saved
     [self refreshScreen];
     return YES;
@@ -461,11 +522,11 @@
                     hideAfter:3];
     
     if (beepMode==beepModeBeepHigh)
-        [errorSound play];
+        [alertSound play];
     else if (beepMode == beepModeBeepHighVibrate)
-        [errorSound playVibrate];
+        [alertSound playVibrate];
     else
-        [errorSound vibrate];
+        [alertSound vibrate];
 }
 
 -(void)showInfo:(NSString*)info withSubtitle:(NSString*)subtitle{
@@ -476,11 +537,11 @@
                        hideAfter:3];
     
     if (beepMode==beepModeBeepHigh)
-        [okSound play];
+        [alertSound play];
     else if (beepMode == beepModeBeepHighVibrate)
-        [okSound playVibrate];
+        [alertSound playVibrate];
     else
-        [okSound vibrate];
+        [alertSound vibrate];
 }
 
 @end
