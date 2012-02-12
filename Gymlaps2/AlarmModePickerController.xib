@@ -38,18 +38,40 @@
 				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">274</int>
 				<array class="NSMutableArray" key="NSSubviews">
-					<object class="IBUISegmentedControl" id="838665337">
+					<object class="IBUINavigationBar" id="874599844">
 						<reference key="NSNextResponder" ref="191373211"/>
-						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{83, 122}, {314, 44}}</string>
+						<int key="NSvFlags">290</int>
+						<string key="NSFrameSize">{480, 44}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
-						<object class="NSColor" key="IBUIBackgroundColor" id="366890013">
-							<int key="NSColorSpace">1</int>
-							<bytes key="NSRGB">MC4xNDExNzY0NzA2IDAuMTQxMTc2NDcwNiAwLjE0MTE3NjQ3MDYAA</bytes>
-						</object>
+						<reference key="NSNextKeyView"/>
+						<string key="NSReuseIdentifierKey">_NS:260</string>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<int key="IBSegmentControlStyle">1</int>
+						<int key="IBUIBarStyle">1</int>
+						<array key="IBUIItems">
+							<object class="IBUINavigationItem" id="886836294">
+								<reference key="IBUINavigationBar" ref="874599844"/>
+								<string key="IBUITitle">Alarm Duration</string>
+								<object class="IBUIBarButtonItem" key="IBUIRightBarButtonItem" id="369178199">
+									<string key="IBUITitle">Done</string>
+									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+									<int key="IBUIStyle">2</int>
+									<reference key="IBUINavigationItem" ref="886836294"/>
+								</object>
+								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+							</object>
+						</array>
+					</object>
+					<object class="IBUISegmentedControl" id="831980392">
+						<reference key="NSNextResponder" ref="191373211"/>
+						<int key="NSvFlags">292</int>
+						<string key="NSFrame">{{83, 128}, {314, 44}}</string>
+						<reference key="NSSuperview" ref="191373211"/>
+						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
+						<string key="NSReuseIdentifierKey">_NS:273</string>
+						<bool key="IBUIOpaque">NO</bool>
+						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<int key="IBNumberOfSegments">3</int>
 						<int key="IBSelectedSegmentIndex">0</int>
 						<array key="IBSegmentTitles">
@@ -77,35 +99,12 @@
 							<reference ref="4"/>
 							<reference ref="4"/>
 						</array>
-						<reference key="IBTintColor" ref="366890013"/>
-					</object>
-					<object class="IBUINavigationBar" id="874599844">
-						<reference key="NSNextResponder" ref="191373211"/>
-						<int key="NSvFlags">290</int>
-						<string key="NSFrameSize">{480, 44}</string>
-						<reference key="NSSuperview" ref="191373211"/>
-						<reference key="NSWindow"/>
-						<string key="NSReuseIdentifierKey">_NS:260</string>
-						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<int key="IBUIBarStyle">1</int>
-						<array key="IBUIItems">
-							<object class="IBUINavigationItem" id="886836294">
-								<reference key="IBUINavigationBar" ref="874599844"/>
-								<string key="IBUITitle">Alarm Duration</string>
-								<object class="IBUIBarButtonItem" key="IBUIRightBarButtonItem" id="369178199">
-									<string key="IBUITitle">Done</string>
-									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-									<int key="IBUIStyle">2</int>
-									<reference key="IBUINavigationItem" ref="886836294"/>
-								</object>
-								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-							</object>
-						</array>
 					</object>
 				</array>
 				<string key="NSFrame">{{0, 20}, {480, 300}}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
+				<reference key="NSNextKeyView" ref="874599844"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">1</int>
 					<bytes key="NSRGB">MC4wOTgwMzkyMTcyOSAwLjA5ODAzOTIxNzI5IDAuMDk4MDM5MjE3MjkAA</bytes>
@@ -134,9 +133,9 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">alarmModeSegmentedControl</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="838665337"/>
+						<reference key="destination" ref="831980392"/>
 					</object>
-					<int key="connectionID">10</int>
+					<int key="connectionID">13</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
@@ -159,8 +158,8 @@
 						<int key="objectID">1</int>
 						<reference key="object" ref="191373211"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="838665337"/>
 							<reference ref="874599844"/>
+							<reference ref="831980392"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -174,11 +173,6 @@
 						<int key="objectID">-2</int>
 						<reference key="object" ref="975951072"/>
 						<reference key="parent" ref="0"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">4</int>
-						<reference key="object" ref="838665337"/>
-						<reference key="parent" ref="191373211"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">5</int>
@@ -201,6 +195,11 @@
 						<reference key="object" ref="369178199"/>
 						<reference key="parent" ref="886836294"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">12</int>
+						<reference key="object" ref="831980392"/>
+						<reference key="parent" ref="191373211"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -209,7 +208,7 @@
 				<string key="-2.CustomClassName">UIResponder</string>
 				<string key="-2.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="1.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<string key="4.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="12.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="5.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="6.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="7.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -218,7 +217,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">11</int>
+			<int key="maxID">13</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">

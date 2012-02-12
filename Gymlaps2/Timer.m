@@ -24,9 +24,14 @@
 - (void)awakeFromInsert;
 {
     [super awakeFromInsert];
-    CFUUIDRef UUID = CFUUIDCreate(kCFAllocatorDefault);
-    CFStringRef UUIDString = CFUUIDCreateString(kCFAllocatorDefault,UUID);
-    [self setValue:(__bridge NSString *)UUIDString forKey:@"uuid"];
+    
+    id result = nil;
+    CFUUIDRef uuid = CFUUIDCreate(NULL);
+    if (uuid) {
+        result = (__bridge_transfer id)uuid;
+    }
+    
+    [self setValue:result forKey:@"uuid"];
 }
 
 @end

@@ -8,6 +8,7 @@
 
 #import "SetlistViewController.h"
 #import "AppDelegate.h"
+#import "TimerCell.h"
 
 @implementation SetlistViewController
 @synthesize delegate = _delegate, timers = _timers;
@@ -26,22 +27,20 @@
 -(NSArray*)fetchTimers {
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     NSManagedObjectContext *context = [appDelegate managedObjectContext];
-    NSFetchRequest* all = [[NSFetchRequest alloc] init];
-    [all setEntity:[NSEntityDescription entityForName:@"Timer" inManagedObjectContext:context]];
+    NSFetchRequest* request = [[NSFetchRequest alloc] init];
+    [request setEntity:[NSEntityDescription entityForName:@"Timer" inManagedObjectContext:context]];
 
+    
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+
+    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+    [request setSortDescriptors:sortDescriptors];
+
+    
     NSError* error = nil;
-    NSArray* results = [context executeFetchRequest:all error:&error];
-
+    NSArray* results = [context executeFetchRequest:request error:&error];
+    
     return results;
-    
-    NSSortDescriptor *nameDescriptor =
-    [[NSSortDescriptor alloc] initWithKey:@"name"
-                                 ascending:YES
-                                  selector:@selector(caseInsensitiveCompare:)];
-
-    NSArray *sortedArray = [results sortedArrayUsingDescriptors:[NSArray arrayWithObject:nameDescriptor]];
-    
-    return sortedArray;
 }
 
 
@@ -60,7 +59,8 @@
     UIBarButtonItem *cancel = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancel)];
 
     self.navigationItem.leftBarButtonItem = cancel;
-    
+    self.tableView.backgroundColor = [UIColor blackColor]; /*#cccccc*/
+    self.tableView.separatorColor = [UIColor blackColor];
     [super viewDidLoad];
     
     // Uncomment the following line to preserve selection between presentations.
@@ -68,6 +68,7 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
 }
 
 -(void)cancel {
@@ -128,19 +129,44 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"TimerCell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    TimerCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+       NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"TimerCell" owner:self options:nil];
+        
+        for (id object in topLevelObjects) {
+            if ([object isKindOfClass:[UITableViewCell class]]) {
+                cell = (TimerCell*)object;
+                break;
+            }
+        }
     }
     
     // Configure the cell...
     Timer *t = [self.timers objectAtIndex:indexPath.row];
-    cell.textLabel.text = t.name;
-    
+    cell.name.text = t.name;
+    cell.contentView.backgroundColor = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:1]; /*#333333*/
+
+    cell.t1mins.text = [TimerCell textForMinutes: t.intervalOneMinutes];
+    cell.t2mins.text = [TimerCell textForMinutes: t.intervalTwoMinutes];
+    cell.t1secs.text = [TimerCell textForSeconds: t.intervalOneSeconds];
+    cell.t2secs.text = [TimerCell textForSeconds: t.intervalTwoSeconds];
+
+    cell.laps.text = [TimerCell textForLaps: t.laps];
+    cell.alarmMode.text = [TimerCell textForAlarmMode: t.alarmMode];
     return cell;
+
 }
+
+- (CGFloat)tableView:(UITableView *)tableView 
+heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    return 60;
+    
+}
+
 
 /*
  // Override to support conditional editing of the table view.

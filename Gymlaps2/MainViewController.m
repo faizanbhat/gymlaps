@@ -239,24 +239,12 @@
     
     else if (label == setListLabel) {
 
-
         SetlistViewController *controller = [[SetlistViewController alloc] initWithStyle:UITableViewStylePlain];
         controller.delegate = self;
         UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
+        navController.navigationBar.barStyle = UIBarStyleBlackOpaque;
         [self presentModalViewController:navController animated:YES];
-//        
-//        NSManagedObjectContext *context = self.managedObjectContext;
-//        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-//        NSEntityDescription *entity = [NSEntityDescription 
-//                                       entityForName:@"Timer" inManagedObjectContext:context];
-//        [fetchRequest setEntity:entity];
-//        
-//        NSError *error;
-//        NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
-//        for (NSManagedObject *info in fetchedObjects) {
-//            NSLog(@"Name: %@", [info valueForKey:@"name"]);
-//        }                
-//        [self loadScreenWithTimer:[fetchedObjects objectAtIndex:([fetchedObjects count]-1)]];
+
     }
     
 }
@@ -355,13 +343,15 @@
         [t setValue:self.timerNameTextField.text forKey:@"name"];
         
         NSError *error;
+        
         if (![context save:&error]) {
             [self showError:@"Whoops, couldn't save!" withSubtitle:[error localizedDescription]];
-            return NO;
         }
         
-        self.screenTimer = (Timer*)t;
-        [self showInfo:@"Timer Saved" withSubtitle:nil];
+        else {
+            self.screenTimer = (Timer*)t;
+            [self showInfo:@"Timer Saved" withSubtitle:nil];
+        }
         
     }
     
@@ -373,9 +363,9 @@
             NSError *error;
             if (![context save:&error]) {
                 [self showError:@"Whoops, couldn't rename!" withSubtitle:[error localizedDescription]];
-                return NO;
-            }       
+            }   
             
+            else
             [self showInfo:@"Timer Renamed" withSubtitle:nil];
         }
     }
@@ -396,13 +386,15 @@
             [t setValue:self.timerNameTextField.text forKey:@"name"];
             
             NSError *error;
+            
             if (![context save:&error]) {
                 [self showError:@"Whoops, couldn't save!" withSubtitle:[error localizedDescription]];
-                return NO;
             }
             
-            [self showInfo:@"New Timer Saved" withSubtitle:[NSString stringWithFormat:@"Created new timer with the specified name"]];
-            self.screenTimer = (Timer*)t;
+            else {
+                [self showInfo:@"New Timer Saved" withSubtitle:[NSString stringWithFormat:@"Created new timer with the specified name"]];
+                self.screenTimer = (Timer*)t;
+            }
         }
         
         else {
@@ -416,10 +408,10 @@
             NSError *error;
             if (![context save:&error]) {
                 [self showError:@"Whoops, couldn't save!" withSubtitle:[error localizedDescription]];
-                return NO;
             }
             
-            [self showInfo:@"Timer Updated" withSubtitle:@"Updated existing timer with matching name"];
+            else 
+                [self showInfo:@"Timer Updated" withSubtitle:@"Updated existing timer with matching name"];
         }
     }
     

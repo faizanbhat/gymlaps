@@ -16,7 +16,6 @@
 @interface SetlistViewController : UITableViewController {
     NSArray *_timers;
     __weak id<SetlistViewControllerDelegate> _delegate;
-    
 }
 
 @property (nonatomic,strong) NSArray *timers;
