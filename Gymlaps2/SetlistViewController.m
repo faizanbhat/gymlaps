@@ -147,8 +147,9 @@
     // Configure the cell...
     Timer *t = [self.timers objectAtIndex:indexPath.row];
     cell.name.text = t.name;
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.contentView.backgroundColor = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:1]; /*#333333*/
-
+    cell.selectedBackgroundView.backgroundColor = [UIColor blackColor];
     cell.t1mins.text = [TimerCell textForMinutes: t.intervalOneMinutes];
     cell.t2mins.text = [TimerCell textForMinutes: t.intervalTwoMinutes];
     cell.t1secs.text = [TimerCell textForSeconds: t.intervalOneSeconds];
@@ -163,7 +164,7 @@
 - (CGFloat)tableView:(UITableView *)tableView 
 heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    return 60;
+    return 69;
     
 }
 
