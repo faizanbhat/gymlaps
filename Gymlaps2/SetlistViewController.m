@@ -59,8 +59,8 @@
     UIBarButtonItem *cancel = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancel)];
 
     self.navigationItem.leftBarButtonItem = cancel;
-    self.tableView.backgroundColor = [UIColor blackColor]; /*#cccccc*/
-    self.tableView.separatorColor = [UIColor blackColor];
+    self.tableView.backgroundColor = [UIColor whiteColor]; /*#cccccc*/
+    self.tableView.separatorColor = [UIColor colorWithRed:0.8 green:0.8 blue:0.8 alpha:1];
     [super viewDidLoad];
     
     // Uncomment the following line to preserve selection between presentations.
@@ -90,6 +90,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    self.timers = [self fetchTimers];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -147,9 +148,8 @@
     // Configure the cell...
     Timer *t = [self.timers objectAtIndex:indexPath.row];
     cell.name.text = t.name;
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.contentView.backgroundColor = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:1]; /*#333333*/
-    cell.selectedBackgroundView.backgroundColor = [UIColor blackColor];
+//    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+//    cell.contentView.backgroundColor = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:1];
     cell.t1mins.text = [TimerCell textForMinutes: t.intervalOneMinutes];
     cell.t2mins.text = [TimerCell textForMinutes: t.intervalTwoMinutes];
     cell.t1secs.text = [TimerCell textForSeconds: t.intervalOneSeconds];
@@ -164,7 +164,7 @@
 - (CGFloat)tableView:(UITableView *)tableView 
 heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    return 69;
+    return 56;
     
 }
 

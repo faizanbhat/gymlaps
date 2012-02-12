@@ -154,7 +154,6 @@
 	transition.subtype = kCATransitionFromTop;
 	[self.layer addAnimation:transition forKey:nil];
     self.frame = CGRectMake(0, -self.frame.size.height, self.frame.size.width, self.frame.size.height); 
-    
     [self performSelector:@selector(removeFromSuperview) withObject:nil afterDelay:0.25];
 }
 

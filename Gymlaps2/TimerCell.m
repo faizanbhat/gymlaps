@@ -36,8 +36,8 @@
 +(NSString*)textForMinutes:(NSNumber*)min{
     int m = [min intValue];
     if (m<10)
-        return [NSString stringWithFormat:@"0%d:",m];
-    else return [NSString stringWithFormat:@"%d:",m];
+        return [NSString stringWithFormat:@"0%d",m];
+    else return [NSString stringWithFormat:@"%d",m];
 }
 
 +(NSString*)textForSeconds:(NSNumber*)sec{
