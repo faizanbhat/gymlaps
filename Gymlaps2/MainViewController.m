@@ -239,18 +239,24 @@
     
     else if (label == setListLabel) {
 
-        NSManagedObjectContext *context = self.managedObjectContext;
-        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-        NSEntityDescription *entity = [NSEntityDescription 
-                                       entityForName:@"Timer" inManagedObjectContext:context];
-        [fetchRequest setEntity:entity];
-        
-        NSError *error;
-        NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
-        for (NSManagedObject *info in fetchedObjects) {
-            NSLog(@"Name: %@", [info valueForKey:@"name"]);
-        }                
-        [self loadScreenWithTimer:[fetchedObjects objectAtIndex:([fetchedObjects count]-1)]];
+
+        SetlistViewController *controller = [[SetlistViewController alloc] initWithStyle:UITableViewStylePlain];
+        controller.delegate = self;
+        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
+        [self presentModalViewController:navController animated:YES];
+//        
+//        NSManagedObjectContext *context = self.managedObjectContext;
+//        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+//        NSEntityDescription *entity = [NSEntityDescription 
+//                                       entityForName:@"Timer" inManagedObjectContext:context];
+//        [fetchRequest setEntity:entity];
+//        
+//        NSError *error;
+//        NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+//        for (NSManagedObject *info in fetchedObjects) {
+//            NSLog(@"Name: %@", [info valueForKey:@"name"]);
+//        }                
+//        [self loadScreenWithTimer:[fetchedObjects objectAtIndex:([fetchedObjects count]-1)]];
     }
     
 }
@@ -329,7 +335,6 @@
 #pragma mark - Core Data Methods
 
 -(IBAction)saveOnscreenTimer:(id)sender{
-    
     
     if ([self.timerNameTextField isFirstResponder])
         [self.timerNameTextField resignFirstResponder];
@@ -497,7 +502,21 @@
     [self dismissModalViewControllerAnimated:YES];
 }
 
+#pragma mark - Setlist View Controller Delegate
+-(void)setlistViewControllerDidCancel:(id)controller{
+    
+    [self dismissModalViewControllerAnimated:YES];
+    
+}
 
+-(void)setlistViewController:(id)controller didLoadTimer:(Timer*)t {
+    
+    
+    [self loadScreenWithTimer:(Timer*)t];
+    
+    [self dismissModalViewControllerAnimated:YES];
+
+}
 
 #pragma mark - MKInfoPanel
 -(void)showError:(NSString*)error withSubtitle:(NSString*)subtitle{
@@ -529,5 +548,6 @@
     else
         [alertSound vibrate];
 }
+
 
 @end

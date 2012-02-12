@@ -58,6 +58,8 @@
 		B3CDB4B114E60F2F009402D4 /* Mute.png in Resources */ = {isa = PBXBuildFile; fileRef = B3CDB4B014E60F2F009402D4 /* Mute.png */; };
 		B3CDB4B514E614D4009402D4 /* Whoosh.caf in Resources */ = {isa = PBXBuildFile; fileRef = B3CDB4B414E614D4009402D4 /* Whoosh.caf */; };
 		B3CDB4DB14E65301009402D4 /* Timer.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CDB4DA14E65301009402D4 /* Timer.m */; };
+		B3CDB4E314E6776A009402D4 /* SetlistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CDB4E114E6776A009402D4 /* SetlistViewController.m */; };
+		B3CDB4E414E6776A009402D4 /* SetlistViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3CDB4E214E6776A009402D4 /* SetlistViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -126,6 +128,9 @@
 		B3CDB4B414E614D4009402D4 /* Whoosh.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Whoosh.caf; sourceTree = "<group>"; };
 		B3CDB4D914E65301009402D4 /* Timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Timer.h; sourceTree = "<group>"; };
 		B3CDB4DA14E65301009402D4 /* Timer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Timer.m; sourceTree = "<group>"; };
+		B3CDB4E014E6776A009402D4 /* SetlistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetlistViewController.h; sourceTree = "<group>"; };
+		B3CDB4E114E6776A009402D4 /* SetlistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetlistViewController.m; sourceTree = "<group>"; };
+		B3CDB4E214E6776A009402D4 /* SetlistViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetlistViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +203,7 @@
 		B37EF7E914DED6DB001A5C03 /* Gymlaps2 */ = {
 			isa = PBXGroup;
 			children = (
+				B3CDB4DC14E67579009402D4 /* Setlist */,
 				B37EF84514DF2E91001A5C03 /* MKInfoBundle */,
 				B37EF81C14DF2A61001A5C03 /* Assets */,
 				B37EF81414DEDA8F001A5C03 /* SoundEffect */,
@@ -296,6 +302,16 @@
 			path = MKInfoBundle;
 			sourceTree = "<group>";
 		};
+		B3CDB4DC14E67579009402D4 /* Setlist */ = {
+			isa = PBXGroup;
+			children = (
+				B3CDB4E014E6776A009402D4 /* SetlistViewController.h */,
+				B3CDB4E114E6776A009402D4 /* SetlistViewController.m */,
+				B3CDB4E214E6776A009402D4 /* SetlistViewController.xib */,
+			);
+			name = Setlist;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -378,6 +394,7 @@
 				B38E2FD814E5D40C00E35F90 /* noise.png in Resources */,
 				B3CDB4B114E60F2F009402D4 /* Mute.png in Resources */,
 				B3CDB4B514E614D4009402D4 /* Whoosh.caf in Resources */,
+				B3CDB4E414E6776A009402D4 /* SetlistViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,6 +418,7 @@
 				B356CFDE14DF3E1D007389CC /* BeepModePickerController.m in Sources */,
 				B356CFE314DF3E27007389CC /* AlarmModePickerController.m in Sources */,
 				B3CDB4DB14E65301009402D4 /* Timer.m in Sources */,
+				B3CDB4E314E6776A009402D4 /* SetlistViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
