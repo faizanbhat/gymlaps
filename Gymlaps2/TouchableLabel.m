@@ -11,7 +11,7 @@
 
 @implementation TouchableLabel
 @synthesize delegate = _delegate;
-@synthesize isEnabled = _isEnabled;
+@synthesize touchAllowed = _touchAllowed;
 @synthesize clickSound = _clickSound;
 
 - (id)initWithFrame:(CGRect)frame {
@@ -25,7 +25,7 @@
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch *touch = [touches anyObject];
 	
-	if ((touch.tapCount==2 && self.isEnabled))
+	if ((touch.tapCount==2 && self.touchAllowed))
     {
             if (self.clickSound == nil)
                 self.clickSound = [SoundEffect soundEffectForResourceName:@"Click" ofType:@"caf"];

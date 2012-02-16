@@ -67,7 +67,7 @@
 
 	// enable touches
     
-	[self setTouchesEnabled:YES];
+	[self setTouchesAllowed:YES];
 	resetButton.enabled = NO;
 }
 
@@ -131,17 +131,17 @@
 }
 
 #pragma mark - TODO: Make sure SaveScreen is disabled when timer is running
--(void)setTouchesEnabled:(BOOL)isEnabled{
-	self.intervalOneMinutesLabel.isEnabled = isEnabled;
-	self.intervalOneSecondsLabel.isEnabled = isEnabled;
-	self.intervalTwoMinutesLabel.isEnabled = isEnabled;
-	self.intervalTwoSecondsLabel.isEnabled = isEnabled;
-	self.beepModeLabel.isEnabled = isEnabled;
-	self.alarmModeLabel.isEnabled = isEnabled;
-	self.numberOfLapsLabel.isEnabled = isEnabled;
-    self.setListLabel.isEnabled = isEnabled;
-	infoButton.userInteractionEnabled = isEnabled;
-    infoButton.enabled = isEnabled;
+-(void)setTouchesAllowed:(BOOL)isAllowed{
+	self.intervalOneMinutesLabel.touchAllowed = isAllowed;
+	self.intervalOneSecondsLabel.touchAllowed = isAllowed;
+	self.intervalTwoMinutesLabel.touchAllowed = isAllowed;
+	self.intervalTwoSecondsLabel.touchAllowed = isAllowed;
+	self.beepModeLabel.touchAllowed = isAllowed;
+	self.alarmModeLabel.touchAllowed = isAllowed;
+	self.numberOfLapsLabel.touchAllowed = isAllowed;
+    self.setListLabel.touchAllowed = isAllowed;
+	infoButton.userInteractionEnabled = isAllowed;
+    infoButton.enabled = isAllowed;
 }
 
 
@@ -601,7 +601,7 @@
         else
             [numberOfLapsLabel setText:@"00"];
         
-		[self setTouchesEnabled:YES];
+		[self setTouchesAllowed:YES];
 		currentstage = stagestopped;
 		resetButton.enabled = NO;
         
@@ -715,7 +715,7 @@
     timerSeconds = intervalOneMinutes*60 + intervalOneSeconds;
 	if (timerSeconds>0){
 		currentstage = stageintervalonecountdown;
-		[self setTouchesEnabled:NO];
+		[self setTouchesAllowed:NO];
 		self.intervalTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(countDownOne) userInfo:nil repeats:YES];
 	}
 }
@@ -898,7 +898,7 @@
 
 -(void)stop {
 	currentstage = stagestopped;
-	[self setTouchesEnabled:YES];
+	[self setTouchesAllowed:YES];
 	[intervalOneMinutesLabel setMinutes:intervalOneMinutes];
 	[intervalOneSecondsLabel setSeconds:intervalOneSeconds];
 	[intervalTwoMinutesLabel setMinutes:intervalTwoMinutes];

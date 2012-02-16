@@ -19,12 +19,12 @@
     
     //__weak indicates a weak reference
 	__weak id<TouchableLabelDelegate> _delegate;
-	BOOL _isEnabled;
+	BOOL _touchAllowed;
 	SoundEffect* _clickSound;
 }
 
 @property (weak)  id<TouchableLabelDelegate> delegate;
-@property (assign,nonatomic) BOOL isEnabled;
+@property (assign,nonatomic) BOOL touchAllowed;
 @property (strong,nonatomic) SoundEffect *clickSound;
 
 -(void)setMinutes:(int)time;

@@ -130,7 +130,7 @@
 
 - (IBAction)showInfo:(id)sender;
 -(void)editLabel:(id)label;
--(void)setTouchesEnabled:(BOOL)isEnabled;
+-(void)setTouchesAllowed:(BOOL)isAllowed;
 - (IBAction)longTap:(UIGestureRecognizer*)sender;
 
 -(void)intervalPickerController:(id)controller didExitWithMins:(int)mins andSecs:(int)secs forInterval:(int)interval;
