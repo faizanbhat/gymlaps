@@ -11,6 +11,7 @@
 @required
 -(void)setlistViewController:(id)controller didLoadTimer:(Timer*)t;
 -(void)setlistViewControllerDidCancel:(id)controller;
+-(void)setlistViewControllerDidDeleteTimer:(Timer*)timer;
 @end
 
 @interface SetlistViewController : UITableViewController {

@@ -69,8 +69,6 @@
     
 	[self setTouchesEnabled:YES];
 	resetButton.enabled = NO;
-    
-
 }
 
 -(void)refreshScreen {
@@ -125,6 +123,10 @@
 
         else
             self.setListLabel.textColor = [UIColor blackColor];   
+    }
+    
+    else {
+        setListLabel.text = @"UNSAVED TIMER";
     }
 }
 
@@ -508,6 +510,30 @@
     
     [self dismissModalViewControllerAnimated:YES];
 
+}
+
+-(void)setlistViewControllerDidDeleteTimer:(Timer*)timer {
+    
+    // This method is called when a timer gets deleted    
+    if (timer == screenTimer) {
+        
+        self.screenTimer = nil;
+        
+        intervalOneMinutes = 0;
+        intervalOneSeconds = 0;
+        intervalTwoMinutes = 0;
+        intervalTwoSeconds = 0;
+        
+        screenTimerModified = NO;
+        
+        beepMode = beepModeBeepHigh;
+        alarmMode = alarmMode1sec;
+        laps = 0;
+        runs=0;
+        
+        [self refreshScreen];
+    }
+    
 }
 
 #pragma mark - MKInfoPanel

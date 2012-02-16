@@ -146,5 +146,5 @@
 -(void)showInfo:(NSString*)info withSubtitle:(NSString*)subtitle;
 -(void)setlistViewControllerDidCancel:(id)controller;
 -(void)setlistViewController:(id)controller didLoadTimer:(Timer*)t;
-
+-(void)setlistViewControllerDidDeleteTimer:(Timer*)timer;
 @end
