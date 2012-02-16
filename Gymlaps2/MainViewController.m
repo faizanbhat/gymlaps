@@ -569,4 +569,389 @@
 
 #pragma mark - Timer Methods
 
+-(void)invalidateTimers{
+    
+	if ([intervalTimer isValid])
+		[intervalTimer invalidate];
+	if ([alarmTimer isValid])
+		[alarmTimer invalidate];
+}
+
+-(IBAction)reset {
+	
+    runs = 0;
+    
+	if (beepMode==beepModeBeepHigh)
+        [startSound play];
+	else if (beepMode == beepModeBeepHighVibrate)
+        [startSound playVibrate];
+    else
+		[startSound vibrate];
+    
+	
+	if (currentstage == stageintervalonepaused || currentstage == stageintervaltwopaused || currentstage == stagealarmonepaused || currentstage == stagealarmtwopaused)
+	{
+		[intervalOneMinutesLabel setMinutes:intervalOneMinutes];
+		[intervalOneSecondsLabel setSeconds:intervalOneSeconds];
+		[intervalTwoMinutesLabel setMinutes:intervalTwoMinutes];
+		[intervalTwoSecondsLabel setSeconds:intervalTwoSeconds];
+		
+		if (laps!=0)
+			[numberOfLapsLabel setText:[NSString stringWithFormat:@"%d",laps]];
+        else
+            [numberOfLapsLabel setText:@"00"];
+        
+		[self setTouchesEnabled:YES];
+		currentstage = stagestopped;
+		resetButton.enabled = NO;
+        
+	}
+}
+
+-(IBAction)start {
+    
+    
+	if ((intervalOneMinutes*60 + intervalOneSeconds)>0)
+    {
+        
+       	if (beepMode==beepModeBeepHigh)
+            [startSound play];
+        else if (beepMode == beepModeBeepHighVibrate)
+            [startSound playVibrate];
+        else
+            [startSound vibrate];
+        
+        if (currentstage == stagestopped)
+        {
+            currentLap = laps;
+            resetButton.enabled = NO;
+            [self startOne];
+        }
+        
+        // running
+        else if (currentstage == stageintervalonecountdown) {
+            currentstage = stageintervalonepaused;
+            resetButton.enabled = YES;
+            
+            [self invalidateTimers];
+            
+        }
+        
+        else if (currentstage == stageintervaltwocountdown) {
+            resetButton.enabled = YES;
+            
+            currentstage = stageintervaltwopaused;
+            [self invalidateTimers];
+            
+        }
+        
+        else if (currentstage == stagealarmonecountdown) {
+            currentstage = stagealarmonepaused;
+            resetButton.enabled = YES;
+            
+            [self invalidateTimers];
+        }
+        
+        else if (currentstage == stagealarmtwocountdown) {
+            currentstage = stagealarmtwopaused;
+            resetButton.enabled = YES;
+            
+            [self invalidateTimers];
+            
+        }
+        
+        else if (currentstage == stagealarmend) {
+            
+            [self invalidateTimers];
+            [self stop];
+            
+        }
+        
+        //paused
+        else if (currentstage == stageintervalonepaused) {
+            currentstage = stageintervalonecountdown;
+            resetButton.enabled = NO;
+            
+            self.intervalTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(countDownOne) userInfo:nil repeats:YES];
+        }
+        
+        else if (currentstage == stageintervaltwopaused) {
+            resetButton.enabled = NO;
+            
+            currentstage = stageintervaltwocountdown;
+            self.intervalTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(countDownTwo) userInfo:nil repeats:YES];
+            
+        }
+        
+        else if (currentstage == stagealarmonepaused) {
+            resetButton.enabled = NO;
+            
+            [self startTwo];
+            
+        }
+        
+        else if (currentstage == stagealarmtwopaused) {
+            resetButton.enabled = NO;
+            
+            [self nextLap];
+            
+        }
+    }
+    
+    else {
+        
+        if (beepMode==beepModeBeepHigh)
+            [alertSound play];
+        else if (beepMode == beepModeBeepHighVibrate)
+            [alertSound playVibrate];
+        else
+            [alertSound vibrate];
+                
+        [self showError:@"Intervals have not been set" withSubtitle:@"Double tap screen to set time intervals before starting the timer"];
+    }
+}
+
+-(void)startOne {
+    timerSeconds = intervalOneMinutes*60 + intervalOneSeconds;
+	if (timerSeconds>0){
+		currentstage = stageintervalonecountdown;
+		[self setTouchesEnabled:NO];
+		self.intervalTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(countDownOne) userInfo:nil repeats:YES];
+	}
+}
+
+- (void)countDownOne
+{
+    currentstage = stageintervalonecountdown;
+    timerSeconds--;
+    int min = timerSeconds/60;
+    int sec = timerSeconds%60;
+    [intervalOneMinutesLabel setMinutes:min];
+    [intervalOneSecondsLabel setSeconds:sec];
+    
+	if (timerSeconds<=1) {
+		
+		[intervalTimer invalidate];
+		self.intervalTimer = nil;
+		[self startAlarmOne];
+	}
+}	
+
+-(void)startAlarmOne{
+	alarmCount = alarms[alarmMode];
+	currentstage = stagealarmonecountdown;
+	self.alarmTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(countDownAlarmOne) userInfo:nil repeats:YES];
+}
+
+- (void)countDownAlarmOne {
+    
+	currentstage = stagealarmonecountdown;
+	if (alarmCount == alarms[alarmMode])
+		intervalOneSecondsLabel.text = [NSString stringWithFormat:@"00"];
+	
+	alarmCount--;
+    
+    if ((intervalTwoMinutes*60 + intervalTwoSeconds)>0) {
+        if (beepMode==beepModeBeepHigh)
+            [intervalAlarm play];
+        else if (beepMode == beepModeBeepHighVibrate)
+            [intervalAlarm playVibrate];
+        else
+            [intervalAlarm vibrate];
+    }
+    
+    else {
+        
+        [self intervalOrEndAlarm];    
+        
+    }
+	
+	if (alarmCount == 0) {
+		
+		[alarmTimer invalidate];
+		self.alarmTimer = nil;
+		[self startTwo];
+	}
+}
+
+
+-(void)startTwo {
+    
+	timerSeconds = intervalTwoMinutes*60 + intervalTwoSeconds;
+	if (timerSeconds>0) {
+		currentstage = stageintervaltwocountdown;
+		self.intervalTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(countDownTwo) userInfo:nil repeats:YES];
+	}
+	else
+		[self nextLap];
+}
+
+- (void)countDownTwo
+
+{
+	currentstage = stageintervaltwocountdown;
+    
+	timerSeconds--;
+	int min = timerSeconds/60;
+	int sec = timerSeconds%60;
+    [intervalTwoMinutesLabel setMinutes:min];
+    [intervalTwoSecondsLabel setSeconds:sec];
+	
+	if (timerSeconds<=1) {
+		
+		[intervalTimer invalidate];
+		self.intervalTimer = nil;
+		[self startAlarmTwo];
+	}
+	
+}	
+
+-(void)startAlarmTwo{
+	
+	alarmCount = alarms[alarmMode];
+	currentstage  = stagealarmtwocountdown;
+	self.alarmTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(countDownAlarmTwo) userInfo:nil repeats:YES];
+}
+
+- (void)countDownAlarmTwo {
+	
+	currentstage  = stagealarmtwocountdown;
+	if (alarmCount == alarms[alarmMode])
+		intervalTwoSecondsLabel.text = [NSString stringWithFormat:@"00"];
+	
+	alarmCount--;
+    
+    [self intervalOrEndAlarm];    
+    
+	
+	if (alarmCount == 0) {
+		
+		[alarmTimer invalidate];
+		self.alarmTimer = nil;
+		[self nextLap];
+	}
+}
+
+- (void)nextLap {
+    
+	if (laps == 0) {
+		[intervalOneMinutesLabel setMinutes:intervalOneMinutes];
+		[intervalOneSecondsLabel setSeconds:intervalOneSeconds];
+		[intervalTwoMinutesLabel setMinutes:intervalTwoMinutes];
+		[intervalTwoSecondsLabel setSeconds:intervalTwoSeconds];
+		[self startOne];
+        runs=runs+1;
+        [numberOfLapsLabel setText:[NSString stringWithFormat:@"%d",runs]];
+	}
+	
+	else {
+		currentLap--;
+		[numberOfLapsLabel setText:[NSString stringWithFormat:@"%d",currentLap]];
+		if (currentLap>0){
+			[intervalOneMinutesLabel setMinutes:intervalOneMinutes];
+			[intervalOneSecondsLabel setSeconds:intervalOneSeconds];
+			[intervalTwoMinutesLabel setMinutes:intervalTwoMinutes];
+			[intervalTwoSecondsLabel setSeconds:intervalTwoSeconds];
+			[self startOne];
+		}
+		
+		else {
+			[self stop];
+		}
+        
+	}
+    
+}
+
+- (void)intervalOrEndAlarm{
+    
+    if (laps == 0) {
+        if (beepMode==beepModeBeepHigh)
+            [intervalAlarm play];
+        else if (beepMode == beepModeBeepHighVibrate)
+            [intervalAlarm playVibrate];
+        else
+            [intervalAlarm vibrate];
+    }
+    
+    else {
+        if (currentLap>1){
+            if (beepMode==beepModeBeepHigh)
+                [intervalAlarm play];
+            else if (beepMode == beepModeBeepHighVibrate)
+                [intervalAlarm playVibrate];
+            else
+                [intervalAlarm vibrate];
+        }        
+        
+        else {
+            if (beepMode==beepModeBeepHigh)
+                [endAlarm play];
+            else if (beepMode == beepModeBeepHighVibrate)
+                [endAlarm playVibrate];
+            else
+                [endAlarm vibrate];
+            
+        }
+    }
+}
+
+-(void)stop {
+	currentstage = stagestopped;
+	[self setTouchesEnabled:YES];
+	[intervalOneMinutesLabel setMinutes:intervalOneMinutes];
+	[intervalOneSecondsLabel setSeconds:intervalOneSeconds];
+	[intervalTwoMinutesLabel setMinutes:intervalTwoMinutes];
+	[intervalTwoSecondsLabel setSeconds:intervalTwoSeconds];
+	
+	if (laps!=0)
+		[numberOfLapsLabel setText:[NSString stringWithFormat:@"%d",laps]];
+	
+	resetButton.enabled = NO;
+    
+	startButton.enabled = YES;
+}
+
+-(void)pauseForExit{
+    
+	if (currentstage == stageintervalonecountdown) {
+		currentstage = stageintervalonepaused;
+		resetButton.enabled = YES;
+        
+		[self invalidateTimers];
+        
+	}
+	
+	else if (currentstage == stageintervaltwocountdown) {
+		resetButton.enabled = YES;
+        
+		currentstage = stageintervaltwopaused;
+		[self invalidateTimers];
+        
+	}
+	
+	else if (currentstage == stagealarmonecountdown) {
+		currentstage = stagealarmonepaused;
+		resetButton.enabled = YES;
+        
+		[self invalidateTimers];
+	}
+	
+	else if (currentstage == stagealarmtwocountdown) {
+		currentstage = stagealarmtwopaused;
+		resetButton.enabled = YES;
+        
+		[self invalidateTimers];
+        
+	}
+	
+	else if (currentstage == stagealarmend) {
+        
+		[self invalidateTimers];
+		[self stop];
+		
+	}
+}
+
+
 @end

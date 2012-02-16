@@ -32,7 +32,7 @@
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
-    // [self.mainViewController pauseForExit];
+    [self.mainViewController pauseForExit];
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application

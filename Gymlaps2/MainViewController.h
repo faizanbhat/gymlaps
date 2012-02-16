@@ -147,4 +147,17 @@
 -(void)setlistViewControllerDidCancel:(id)controller;
 -(void)setlistViewController:(id)controller didLoadTimer:(Timer*)t;
 -(void)setlistViewControllerDidDeleteTimer:(Timer*)timer;
+
+// Timer
+-(IBAction)start;
+-(IBAction)reset;
+-(void)startOne;
+-(void)startTwo;
+-(void)nextLap;
+-(void)startAlarmOne;
+-(void)startAlarmTwo;
+-(void)intervalOrEndAlarm;
+-(void)stop;
+-(void)pauseForExit;
+
 @end
