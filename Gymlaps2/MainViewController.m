@@ -567,5 +567,6 @@
         [alertSound vibrate];
 }
 
+#pragma mark - Timer Methods
 
 @end
