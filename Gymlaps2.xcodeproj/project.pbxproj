@@ -57,6 +57,18 @@
 		B37EF85A14DF2E91001A5C03 /* Warning@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B37EF85014DF2E91001A5C03 /* Warning@2x.png */; };
 		B37EF85C14DF302B001A5C03 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B37EF85B14DF302B001A5C03 /* QuartzCore.framework */; };
 		B38E2FD814E5D40C00E35F90 /* noise.png in Resources */ = {isa = PBXBuildFile; fileRef = B38E2FD714E5D40C00E35F90 /* noise.png */; };
+		B3ADBAF814ECDF1D00758568 /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3ADBAF614ECDF1D00758568 /* WelcomeViewController.m */; };
+		B3ADBAF914ECDF1D00758568 /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3ADBAF714ECDF1D00758568 /* WelcomeViewController.xib */; };
+		B3ADBAFB14ECE01100758568 /* wc-bottom.png in Resources */ = {isa = PBXBuildFile; fileRef = B3ADBAFA14ECE01100758568 /* wc-bottom.png */; };
+		B3ADBAFD14ECE08200758568 /* wc-top.png in Resources */ = {isa = PBXBuildFile; fileRef = B3ADBAFC14ECE08200758568 /* wc-top.png */; };
+		B3ADBB0014ECE12E00758568 /* wc-next-highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = B3ADBAFE14ECE12E00758568 /* wc-next-highlighted.png */; };
+		B3ADBB0114ECE12E00758568 /* wc-next-button.png in Resources */ = {isa = PBXBuildFile; fileRef = B3ADBAFF14ECE12E00758568 /* wc-next-button.png */; };
+		B3ADBB1114ED06A800758568 /* wc-page2.png in Resources */ = {isa = PBXBuildFile; fileRef = B3ADBB0E14ED06A700758568 /* wc-page2.png */; };
+		B3ADBB1214ED06A800758568 /* wc-page3.png in Resources */ = {isa = PBXBuildFile; fileRef = B3ADBB0F14ED06A700758568 /* wc-page3.png */; };
+		B3ADBB1314ED06A800758568 /* wc-page4.png in Resources */ = {isa = PBXBuildFile; fileRef = B3ADBB1014ED06A700758568 /* wc-page4.png */; };
+		B3ADBB1714ED0C1700758568 /* wc-page1.png in Resources */ = {isa = PBXBuildFile; fileRef = B3ADBB1614ED0C1700758568 /* wc-page1.png */; };
+		B3ADBB1A14ED0CB400758568 /* wc-button.png in Resources */ = {isa = PBXBuildFile; fileRef = B3ADBB1814ED0CB400758568 /* wc-button.png */; };
+		B3ADBB1B14ED0CB400758568 /* wc-button-highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = B3ADBB1914ED0CB400758568 /* wc-button-highlighted.png */; };
 		B3CDB4B114E60F2F009402D4 /* Mute.png in Resources */ = {isa = PBXBuildFile; fileRef = B3CDB4B014E60F2F009402D4 /* Mute.png */; };
 		B3CDB4B514E614D4009402D4 /* Whoosh.caf in Resources */ = {isa = PBXBuildFile; fileRef = B3CDB4B414E614D4009402D4 /* Whoosh.caf */; };
 		B3CDB4DB14E65301009402D4 /* Timer.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CDB4DA14E65301009402D4 /* Timer.m */; };
@@ -129,6 +141,19 @@
 		B37EF85014DF2E91001A5C03 /* Warning@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Warning@2x.png"; sourceTree = "<group>"; };
 		B37EF85B14DF302B001A5C03 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B38E2FD714E5D40C00E35F90 /* noise.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noise.png; sourceTree = "<group>"; };
+		B3ADBAF514ECDF1D00758568 /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
+		B3ADBAF614ECDF1D00758568 /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
+		B3ADBAF714ECDF1D00758568 /* WelcomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
+		B3ADBAFA14ECE01100758568 /* wc-bottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wc-bottom.png"; sourceTree = "<group>"; };
+		B3ADBAFC14ECE08200758568 /* wc-top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wc-top.png"; sourceTree = "<group>"; };
+		B3ADBAFE14ECE12E00758568 /* wc-next-highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wc-next-highlighted.png"; sourceTree = "<group>"; };
+		B3ADBAFF14ECE12E00758568 /* wc-next-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wc-next-button.png"; sourceTree = "<group>"; };
+		B3ADBB0E14ED06A700758568 /* wc-page2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wc-page2.png"; sourceTree = "<group>"; };
+		B3ADBB0F14ED06A700758568 /* wc-page3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wc-page3.png"; sourceTree = "<group>"; };
+		B3ADBB1014ED06A700758568 /* wc-page4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wc-page4.png"; sourceTree = "<group>"; };
+		B3ADBB1614ED0C1700758568 /* wc-page1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wc-page1.png"; sourceTree = "<group>"; };
+		B3ADBB1814ED0CB400758568 /* wc-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wc-button.png"; sourceTree = "<group>"; };
+		B3ADBB1914ED0CB400758568 /* wc-button-highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wc-button-highlighted.png"; sourceTree = "<group>"; };
 		B3CDB4B014E60F2F009402D4 /* Mute.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Mute.png; sourceTree = "<group>"; };
 		B3CDB4B414E614D4009402D4 /* Whoosh.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Whoosh.caf; sourceTree = "<group>"; };
 		B3CDB4D914E65301009402D4 /* Timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Timer.h; sourceTree = "<group>"; };
@@ -208,6 +233,7 @@
 		B37EF7E914DED6DB001A5C03 /* Gymlaps2 */ = {
 			isa = PBXGroup;
 			children = (
+				B3ADBAF314ECDF0200758568 /* Welcome */,
 				B3CDB4DC14E67579009402D4 /* Setlist */,
 				B37EF84514DF2E91001A5C03 /* MKInfoBundle */,
 				B37EF81C14DF2A61001A5C03 /* Assets */,
@@ -308,6 +334,26 @@
 			path = MKInfoBundle;
 			sourceTree = "<group>";
 		};
+		B3ADBAF314ECDF0200758568 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				B3ADBAF514ECDF1D00758568 /* WelcomeViewController.h */,
+				B3ADBAF614ECDF1D00758568 /* WelcomeViewController.m */,
+				B3ADBAF714ECDF1D00758568 /* WelcomeViewController.xib */,
+				B3ADBAFC14ECE08200758568 /* wc-top.png */,
+				B3ADBAFA14ECE01100758568 /* wc-bottom.png */,
+				B3ADBAFE14ECE12E00758568 /* wc-next-highlighted.png */,
+				B3ADBAFF14ECE12E00758568 /* wc-next-button.png */,
+				B3ADBB1614ED0C1700758568 /* wc-page1.png */,
+				B3ADBB0E14ED06A700758568 /* wc-page2.png */,
+				B3ADBB0F14ED06A700758568 /* wc-page3.png */,
+				B3ADBB1014ED06A700758568 /* wc-page4.png */,
+				B3ADBB1814ED0CB400758568 /* wc-button.png */,
+				B3ADBB1914ED0CB400758568 /* wc-button-highlighted.png */,
+			);
+			name = Welcome;
+			sourceTree = "<group>";
+		};
 		B3CDB4DC14E67579009402D4 /* Setlist */ = {
 			isa = PBXGroup;
 			children = (
@@ -404,6 +450,17 @@
 				B3CDB4B514E614D4009402D4 /* Whoosh.caf in Resources */,
 				B3F0B62514E68343008FAFF8 /* TimerCell.xib in Resources */,
 				B3398DDF14E687FC00E4F227 /* cell.png in Resources */,
+				B3ADBAF914ECDF1D00758568 /* WelcomeViewController.xib in Resources */,
+				B3ADBAFB14ECE01100758568 /* wc-bottom.png in Resources */,
+				B3ADBAFD14ECE08200758568 /* wc-top.png in Resources */,
+				B3ADBB0014ECE12E00758568 /* wc-next-highlighted.png in Resources */,
+				B3ADBB0114ECE12E00758568 /* wc-next-button.png in Resources */,
+				B3ADBB1114ED06A800758568 /* wc-page2.png in Resources */,
+				B3ADBB1214ED06A800758568 /* wc-page3.png in Resources */,
+				B3ADBB1314ED06A800758568 /* wc-page4.png in Resources */,
+				B3ADBB1714ED0C1700758568 /* wc-page1.png in Resources */,
+				B3ADBB1A14ED0CB400758568 /* wc-button.png in Resources */,
+				B3ADBB1B14ED0CB400758568 /* wc-button-highlighted.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,6 +486,7 @@
 				B3CDB4DB14E65301009402D4 /* Timer.m in Sources */,
 				B3CDB4E314E6776A009402D4 /* SetlistViewController.m in Sources */,
 				B3398DDD14E683D900E4F227 /* TimerCell.m in Sources */,
+				B3ADBAF814ECDF1D00758568 /* WelcomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

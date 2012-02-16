@@ -70,6 +70,9 @@
     
 	[self setTouchesAllowed:YES];
 	resetButton.enabled = NO;
+    
+    [[NSUserDefaults standardUserDefaults] registerDefaults:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:YES],@"firstLaunch",nil]];
+    
 }
 
 -(void)refreshScreen {
@@ -167,6 +170,18 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"firstLaunch"])
+    {
+        WelcomeViewController *welcomeViewController = [[WelcomeViewController alloc] initWithNibName:@"WelcomeViewController" bundle:nil];
+        welcomeViewController.delegate = self;
+        [self presentModalViewController:welcomeViewController animated:YES];
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"firstLaunch"]; 
+        
+    }
+
+
+
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -569,6 +584,12 @@
     else
         [alertSound vibrate];
 }
+
+#pragma mark - Welcome View Controller Delegate
+-(void)welcomeViewControllerDidFinish:(id)controller{
+    [self dismissModalViewControllerAnimated:YES];
+}
+
 
 #pragma mark - Timer Methods
 

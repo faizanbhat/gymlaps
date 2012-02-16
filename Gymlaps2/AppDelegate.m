@@ -9,7 +9,6 @@
 #import "AppDelegate.h"
 
 #import "MainViewController.h"
-
 @implementation AppDelegate
 
 @synthesize window = _window;
@@ -26,6 +25,7 @@
     self.mainViewController = [[MainViewController alloc] initWithNibName:@"MainViewController" bundle:nil];
     self.window.rootViewController = self.mainViewController;
     self.mainViewController.managedObjectContext = self.managedObjectContext;
+    
     [self.window makeKeyAndVisible];
     return YES;
 }

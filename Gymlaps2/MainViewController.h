@@ -16,6 +16,7 @@
 #import "BeepModePickerController.h"
 #import "MKInfoPanel.h"
 #import "SetlistViewController.h"
+#import "WelcomeViewController.h"
 
 // beep mode
 #define beepModeBeepHigh 0
@@ -46,7 +47,7 @@
 
 @class BeepModePickerController,AlarmModePickerController,LapsPickerController, SoundEffect;
 
-@interface MainViewController : UIViewController <FlipsideViewControllerDelegate,TouchableLabelDelegate,IntervalPickerControllerDelegate, AlarmModePickerControllerDelegate, LapsPickerControllerDelegate, BeepModePickerControllerDelegate, SetlistViewControllerDelegate> {
+@interface MainViewController : UIViewController <FlipsideViewControllerDelegate,TouchableLabelDelegate,IntervalPickerControllerDelegate, AlarmModePickerControllerDelegate, LapsPickerControllerDelegate, BeepModePickerControllerDelegate, SetlistViewControllerDelegate,WelcomeViewControllerDelegate> {
     
     UIView *screen;
 
@@ -151,6 +152,7 @@
 -(void)setlistViewControllerDidCancel:(id)controller;
 -(void)setlistViewController:(id)controller didLoadTimer:(Timer*)t;
 -(void)setlistViewControllerDidDeleteTimer:(Timer*)timer;
+-(void)welcomeViewControllerDidFinish:(id)controller;
 
 // Timer
 -(IBAction)start;
