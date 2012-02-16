@@ -20,6 +20,7 @@
 @synthesize intervalTimer, alarmTimer;
 @synthesize intervalAlarm, startSound, alertSound, endAlarm, whooshSound;
 @synthesize screenTimer;
+@synthesize recognizer;
 
 - (void)didReceiveMemoryWarning
 {
@@ -130,7 +131,6 @@
     }
 }
 
-#pragma mark - TODO: Make sure SaveScreen is disabled when timer is running
 -(void)setTouchesAllowed:(BOOL)isAllowed{
 	self.intervalOneMinutesLabel.touchAllowed = isAllowed;
 	self.intervalOneSecondsLabel.touchAllowed = isAllowed;
@@ -142,6 +142,9 @@
     self.setListLabel.touchAllowed = isAllowed;
 	infoButton.userInteractionEnabled = isAllowed;
     infoButton.enabled = isAllowed;
+    
+    // disable long tap 
+    [self.recognizer setEnabled:isAllowed];
 }
 
 

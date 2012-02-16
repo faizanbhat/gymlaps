@@ -747,6 +747,14 @@
 					<int key="connectionID">112</int>
 				</object>
 				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">recognizer</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="165978246"/>
+					</object>
+					<int key="connectionID">121</int>
+				</object>
+				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">showInfo:</string>
 						<reference key="source" ref="491470438"/>
@@ -1022,7 +1030,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">120</int>
+			<int key="maxID">121</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -1068,6 +1076,7 @@
 						<string key="intervalTwoMinutesLabel">TouchableLabel</string>
 						<string key="intervalTwoSecondsLabel">TouchableLabel</string>
 						<string key="numberOfLapsLabel">TouchableLabel</string>
+						<string key="recognizer">UIGestureRecognizer</string>
 						<string key="resetButton">UIButton</string>
 						<string key="saveScreen">UIView</string>
 						<string key="screen">UIView</string>
@@ -1112,6 +1121,10 @@
 						<object class="IBToOneOutletInfo" key="numberOfLapsLabel">
 							<string key="name">numberOfLapsLabel</string>
 							<string key="candidateClassName">TouchableLabel</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="recognizer">
+							<string key="name">recognizer</string>
+							<string key="candidateClassName">UIGestureRecognizer</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="resetButton">
 							<string key="name">resetButton</string>

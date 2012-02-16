@@ -95,6 +95,9 @@
     
     // this is to determine whether new timer is being saved or existing one is being updated.
     int timerSaveMode;
+    
+    // declared to disable when timer running
+    UIGestureRecognizer* longTapRecognizer;
 }
 
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
@@ -127,6 +130,7 @@
 @property (strong, nonatomic) SoundEffect *whooshSound;
 
 @property (strong, nonatomic) Timer *screenTimer;
+@property (strong, nonatomic) IBOutlet UIGestureRecognizer *recognizer;
 
 - (IBAction)showInfo:(id)sender;
 -(void)editLabel:(id)label;
