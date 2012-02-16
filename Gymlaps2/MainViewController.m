@@ -261,7 +261,7 @@
         
         if (intervalOneMinutes==0&&intervalOneSeconds==0)
         {
-            [self showError:@"Intervals have not been set" withSubtitle:@"Double tap screen to set time intervals before saving the timer"];
+            [self showError:@"Set Intervals" withSubtitle:@"Double tap screen to set time intervals before saving the timer"];
         }
         
         else{
@@ -710,7 +710,7 @@
         else
             [alertSound vibrate];
                 
-        [self showError:@"Intervals have not been set" withSubtitle:@"Double tap screen to set time intervals before starting the timer"];
+        [self showError:@"Set Intervals" withSubtitle:@"Double tap screen to set time intervals before starting the timer"];
     }
 }
 
