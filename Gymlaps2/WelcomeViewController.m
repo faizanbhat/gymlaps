@@ -6,6 +6,9 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
+#define submodeHelp 1
+#define submodeSaveHelp 2
+
 #import "WelcomeViewController.h"
 
 @implementation WelcomeViewController
@@ -28,6 +31,29 @@
     }
     
     return self;
+}
+
+- (void)setMode:(int)mode {
+    
+    switch (mode) {
+        case submodeHelp:
+            self.images= [NSArray arrayWithObjects:[UIImage imageNamed:@"wc-page2.png"],[UIImage imageNamed:@"wc-page3.png"],[UIImage imageNamed:@"wc-page4.png"],nil];
+            self.titles = [NSArray arrayWithObjects:@"Setting Timers", @"Saving Timers", @"Loading Timers",@"That's all", nil];
+            self.texts = [NSArray arrayWithObjects:@"Double tap the screen to choose time intervals and other settings", @"Hold down on the timer name for a split second to save the timer on screen", @"Double tap the timer name to load a saved timer",@"Enjoy your workouts", nil];
+
+            break;
+            
+        case submodeSaveHelp:
+            self.images= [NSArray arrayWithObjects:[UIImage imageNamed:@"wc-page3.png"],[UIImage imageNamed:@"wc-page4.png"],nil];
+            self.titles = [NSArray arrayWithObjects: @"Saving Timers", @"Loading Timers",@"That's all", nil];
+            self.texts = [NSArray arrayWithObjects: @"Hold down on the timer name for a split second to save the timer on screen", @"Double tap the timer name to load a saved timer",@"Enjoy your workouts", nil];
+
+            break;
+            
+        default:
+            break;
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning
