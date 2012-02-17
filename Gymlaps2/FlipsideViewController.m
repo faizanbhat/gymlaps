@@ -64,7 +64,7 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
-    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+	return (interfaceOrientation == UIInterfaceOrientationLandscapeLeft || interfaceOrientation == UIInterfaceOrientationLandscapeRight);
 }
 
 #pragma mark - Actions
@@ -72,6 +72,12 @@
 - (IBAction)done:(id)sender
 {
     [self.delegate flipsideViewControllerDidFinish:self];
+}
+
+- (IBAction)rate {
+    [[UIApplication sharedApplication] 
+     openURL:[NSURL URLWithString:@"itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=446306541&onlyLatestVersion=true&pageNumber=0&sortOrdering=1&type=Purple+Software"]];         
+    
 }
 
 @end

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		B332E84714E0DBA6006FC0D7 /* IntervalTwoPickerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B332E84614E0DBA6006FC0D7 /* IntervalTwoPickerController.xib */; };
+		B333663D14EE25E6007D76B9 /* 208.png in Resources */ = {isa = PBXBuildFile; fileRef = B333663C14EE25E6007D76B9 /* 208.png */; };
+		B333663F14EE2770007D76B9 /* 206.png in Resources */ = {isa = PBXBuildFile; fileRef = B333663E14EE2770007D76B9 /* 206.png */; };
+		B333664114EE27A9007D76B9 /* 206_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = B333664014EE27A9007D76B9 /* 206_selected.png */; };
 		B3398DDD14E683D900E4F227 /* TimerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3398DDC14E683D900E4F227 /* TimerCell.m */; };
 		B356CFD414DF3DF9007389CC /* IntervalPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = B356CFD214DF3DF9007389CC /* IntervalPickerController.m */; };
 		B356CFD514DF3DF9007389CC /* IntervalOnePickerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B356CFD314DF3DF9007389CC /* IntervalOnePickerController.xib */; };
@@ -77,6 +80,9 @@
 
 /* Begin PBXFileReference section */
 		B332E84614E0DBA6006FC0D7 /* IntervalTwoPickerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IntervalTwoPickerController.xib; sourceTree = "<group>"; };
+		B333663C14EE25E6007D76B9 /* 208.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 208.png; sourceTree = "<group>"; };
+		B333663E14EE2770007D76B9 /* 206.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 206.png; sourceTree = "<group>"; };
+		B333664014EE27A9007D76B9 /* 206_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 206_selected.png; sourceTree = "<group>"; };
 		B3398DDB14E683D900E4F227 /* TimerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerCell.h; sourceTree = "<group>"; };
 		B3398DDC14E683D900E4F227 /* TimerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerCell.m; sourceTree = "<group>"; };
 		B356CFD114DF3DF9007389CC /* IntervalPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntervalPickerController.h; sourceTree = "<group>"; };
@@ -309,6 +315,9 @@
 				B37EF82C14DF2A90001A5C03 /* End.caf */,
 				B37EF82D14DF2A90001A5C03 /* Start.caf */,
 				B3CDB4B414E614D4009402D4 /* Whoosh.caf */,
+				B333663C14EE25E6007D76B9 /* 208.png */,
+				B333663E14EE2770007D76B9 /* 206.png */,
+				B333664014EE27A9007D76B9 /* 206_selected.png */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
@@ -457,6 +466,9 @@
 				B3ADBB1714ED0C1700758568 /* wc-page1.png in Resources */,
 				B3ADBB1A14ED0CB400758568 /* wc-button.png in Resources */,
 				B3ADBB1B14ED0CB400758568 /* wc-button-highlighted.png in Resources */,
+				B333663D14EE25E6007D76B9 /* 208.png in Resources */,
+				B333663F14EE2770007D76B9 /* 206.png in Resources */,
+				B333664114EE27A9007D76B9 /* 206_selected.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

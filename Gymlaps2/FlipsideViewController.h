@@ -19,5 +19,5 @@
 @property (weak, nonatomic) IBOutlet id <FlipsideViewControllerDelegate> delegate;
 
 - (IBAction)done:(id)sender;
-
+- (IBAction)rate;
 @end
