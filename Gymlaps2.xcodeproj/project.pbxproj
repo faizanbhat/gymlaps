@@ -81,16 +81,16 @@
 		B332E84614E0DBA6006FC0D7 /* IntervalTwoPickerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IntervalTwoPickerController.xib; sourceTree = "<group>"; };
 		B3398DDB14E683D900E4F227 /* TimerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerCell.h; sourceTree = "<group>"; };
 		B3398DDC14E683D900E4F227 /* TimerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerCell.m; sourceTree = "<group>"; };
-		B356CFD114DF3DF9007389CC /* IntervalPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntervalPickerController.h; sourceTree = "<group>"; };
+		B356CFD114DF3DF9007389CC /* IntervalPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = IntervalPickerController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		B356CFD214DF3DF9007389CC /* IntervalPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntervalPickerController.m; sourceTree = "<group>"; };
 		B356CFD314DF3DF9007389CC /* IntervalOnePickerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IntervalOnePickerController.xib; sourceTree = "<group>"; };
-		B356CFD614DF3E06007389CC /* LapsPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LapsPickerController.h; sourceTree = "<group>"; };
+		B356CFD614DF3E06007389CC /* LapsPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = LapsPickerController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		B356CFD714DF3E06007389CC /* LapsPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LapsPickerController.m; sourceTree = "<group>"; };
 		B356CFD814DF3E06007389CC /* LapsPickerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LapsPickerController.xib; sourceTree = "<group>"; };
-		B356CFDB14DF3E1D007389CC /* BeepModePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeepModePickerController.h; sourceTree = "<group>"; };
+		B356CFDB14DF3E1D007389CC /* BeepModePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = BeepModePickerController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		B356CFDC14DF3E1D007389CC /* BeepModePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeepModePickerController.m; sourceTree = "<group>"; };
 		B356CFDD14DF3E1D007389CC /* BeepModePickerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BeepModePickerController.xib; sourceTree = "<group>"; };
-		B356CFE014DF3E27007389CC /* AlarmModePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmModePickerController.h; sourceTree = "<group>"; };
+		B356CFE014DF3E27007389CC /* AlarmModePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = AlarmModePickerController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		B356CFE114DF3E27007389CC /* AlarmModePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmModePickerController.m; sourceTree = "<group>"; };
 		B356CFE214DF3E27007389CC /* AlarmModePickerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlarmModePickerController.xib; sourceTree = "<group>"; };
 		B356DD0F14EE46860049720D /* 5-stars.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "5-stars.png"; sourceTree = "<group>"; };
@@ -115,7 +115,7 @@
 		B37EF7FC14DED6DB001A5C03 /* FlipsideViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlipsideViewController.m; sourceTree = "<group>"; };
 		B37EF7FF14DED6DB001A5C03 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainViewController.xib; sourceTree = "<group>"; };
 		B37EF80214DED6DB001A5C03 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FlipsideViewController.xib; sourceTree = "<group>"; };
-		B37EF80E14DEDA14001A5C03 /* TouchableLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchableLabel.h; sourceTree = "<group>"; };
+		B37EF80E14DEDA14001A5C03 /* TouchableLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = TouchableLabel.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		B37EF80F14DEDA14001A5C03 /* TouchableLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchableLabel.m; sourceTree = "<group>"; };
 		B37EF81114DEDA8A001A5C03 /* SoundEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundEffect.h; sourceTree = "<group>"; };
 		B37EF81214DEDA8A001A5C03 /* SoundEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundEffect.m; sourceTree = "<group>"; };
@@ -132,7 +132,7 @@
 		B37EF83714DF2AD8001A5C03 /* button_s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_s.png; sourceTree = "<group>"; };
 		B37EF84614DF2E91001A5C03 /* Blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Blue.png; sourceTree = "<group>"; };
 		B37EF84714DF2E91001A5C03 /* Blue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Blue@2x.png"; sourceTree = "<group>"; };
-		B37EF84814DF2E91001A5C03 /* MKInfoPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKInfoPanel.h; sourceTree = "<group>"; };
+		B37EF84814DF2E91001A5C03 /* MKInfoPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MKInfoPanel.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		B37EF84914DF2E91001A5C03 /* MKInfoPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKInfoPanel.m; sourceTree = "<group>"; };
 		B37EF84A14DF2E91001A5C03 /* MKInfoPanel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MKInfoPanel.xib; sourceTree = "<group>"; };
 		B37EF84B14DF2E91001A5C03 /* Red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Red.png; sourceTree = "<group>"; };
@@ -143,7 +143,7 @@
 		B37EF85014DF2E91001A5C03 /* Warning@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Warning@2x.png"; sourceTree = "<group>"; };
 		B37EF85B14DF302B001A5C03 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B38E2FD714E5D40C00E35F90 /* noise.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noise.png; sourceTree = "<group>"; };
-		B3ADBAF514ECDF1D00758568 /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
+		B3ADBAF514ECDF1D00758568 /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = WelcomeViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		B3ADBAF614ECDF1D00758568 /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
 		B3ADBAF714ECDF1D00758568 /* WelcomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
 		B3ADBAFA14ECE01100758568 /* wc-bottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wc-bottom.png"; sourceTree = "<group>"; };
@@ -160,7 +160,7 @@
 		B3CDB4B414E614D4009402D4 /* Whoosh.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Whoosh.caf; sourceTree = "<group>"; };
 		B3CDB4D914E65301009402D4 /* Timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Timer.h; sourceTree = "<group>"; };
 		B3CDB4DA14E65301009402D4 /* Timer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Timer.m; sourceTree = "<group>"; };
-		B3CDB4E014E6776A009402D4 /* SetlistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetlistViewController.h; sourceTree = "<group>"; };
+		B3CDB4E014E6776A009402D4 /* SetlistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = SetlistViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		B3CDB4E114E6776A009402D4 /* SetlistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetlistViewController.m; sourceTree = "<group>"; };
 		B3F0B62414E68343008FAFF8 /* TimerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TimerCell.xib; path = ../TimerCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -575,7 +575,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Gymlaps2/Gymlaps2-Prefix.pch";
 				INFOPLIST_FILE = "Gymlaps2/Gymlaps2-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -587,7 +587,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Gymlaps2/Gymlaps2-Prefix.pch";
 				INFOPLIST_FILE = "Gymlaps2/Gymlaps2-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

@@ -17,13 +17,13 @@
 @class SoundEffect;
 @interface TouchableLabel : UILabel {
     
-    //__weak indicates a weak reference
-	__weak id<TouchableLabelDelegate> _delegate;
+    //__unsafe_unretained indicates a assign reference
+	__unsafe_unretained id<TouchableLabelDelegate> _delegate;
 	BOOL _touchAllowed;
 	SoundEffect* _clickSound;
 }
 
-@property (weak)  id<TouchableLabelDelegate> delegate;
+@property (assign)  id<TouchableLabelDelegate> delegate;
 @property (assign,nonatomic) BOOL touchAllowed;
 @property (strong,nonatomic) SoundEffect *clickSound;
 

@@ -16,11 +16,11 @@
 
 @interface SetlistViewController : UITableViewController {
     NSArray *_timers;
-    __weak id<SetlistViewControllerDelegate> _delegate;
+    __unsafe_unretained id<SetlistViewControllerDelegate> _delegate;
 }
 
 @property (nonatomic,strong) NSArray *timers;
-@property (nonatomic,weak) id<SetlistViewControllerDelegate> delegate;
+@property (nonatomic,assign) id<SetlistViewControllerDelegate> delegate;
 
 -(NSArray*)fetchTimers;
 

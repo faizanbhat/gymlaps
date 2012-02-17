@@ -15,14 +15,14 @@
 @class Timer;
 @interface IntervalPickerController : UIViewController {
     UIPickerView* _pickerView;
-	__weak id<IntervalPickerControllerDelegate> _delegate;
+	__unsafe_unretained id<IntervalPickerControllerDelegate> _delegate;
 	int _minutes;
 	int _seconds;
     int _interval;
 }
 
 @property (strong,nonatomic) UIPickerView *pickerView;
-@property (weak) id<IntervalPickerControllerDelegate> delegate;
+@property (assign) id<IntervalPickerControllerDelegate> delegate;
 @property (nonatomic,assign) int minutes, seconds, interval;
 
 - (id)initWithMinutes:(int)min seconds:(int)sec andInterval:(int)interval;

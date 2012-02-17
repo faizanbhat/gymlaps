@@ -16,12 +16,12 @@
 @class Timer;
 @interface LapsPickerController : UIViewController {
     UIPickerView* _pickerView;
-	__weak id<LapsPickerControllerDelegate> _delegate;
+	__unsafe_unretained id<LapsPickerControllerDelegate> _delegate;
 	int _laps;
 }
 
 @property (nonatomic,strong) UIPickerView *pickerView;
-@property (weak) id<LapsPickerControllerDelegate> delegate;
+@property (assign) id<LapsPickerControllerDelegate> delegate;
 @property (nonatomic,assign) int laps;
 
 -(id)initWithLaps:(int)laps;

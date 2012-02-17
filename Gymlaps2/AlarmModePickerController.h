@@ -18,13 +18,13 @@
 @interface AlarmModePickerController : UIViewController {
     UISegmentedControl *_alarmModeSegmentedControl;	
 	int _selectedIndex;
-	__weak id<AlarmModePickerControllerDelegate> _delegate;
+	__unsafe_unretained id<AlarmModePickerControllerDelegate> _delegate;
     
 }
 
 @property (nonatomic,strong) IBOutlet UISegmentedControl *alarmModeSegmentedControl;
 @property (nonatomic,assign) int selectedIndex;
-@property (weak) id<AlarmModePickerControllerDelegate> delegate;
+@property (assign) id<AlarmModePickerControllerDelegate> delegate;
 
 -(IBAction)done;
 -(id)initWithAlarmMode:(int)alarmMode;

@@ -16,13 +16,13 @@
 @interface BeepModePickerController : UIViewController {
     UISegmentedControl *_beepModeSegmentedControl;	
 	int _selectedIndex;
-	__weak id<BeepModePickerControllerDelegate> _delegate;
+	__unsafe_unretained id<BeepModePickerControllerDelegate> _delegate;
     
 }
 
 @property (nonatomic,strong) IBOutlet UISegmentedControl *beepModeSegmentedControl;
 @property (nonatomic,assign) int selectedIndex;
-@property (weak) id<BeepModePickerControllerDelegate> delegate;
+@property (assign) id<BeepModePickerControllerDelegate> delegate;
 
 -(IBAction)done;
 -(id)initWithBeepMode:(int)beepMode;

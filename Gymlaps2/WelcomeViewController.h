@@ -17,20 +17,20 @@
     NSArray *images;
     NSArray *titles;
     NSArray *texts;
-    __weak id<WelcomeViewControllerDelegate> _delegate;
+    __unsafe_unretained id<WelcomeViewControllerDelegate> _delegate;
 }
 
-@property (weak, nonatomic) IBOutlet UIImageView *pageImage;
-@property (weak, nonatomic) IBOutlet UILabel *pageTitle;
-@property (weak, nonatomic) IBOutlet UILabel *pageText;
-@property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
-@property (weak, nonatomic) IBOutlet UIButton *nextButton;
+@property (assign, nonatomic) IBOutlet UIImageView *pageImage;
+@property (assign, nonatomic) IBOutlet UILabel *pageTitle;
+@property (assign, nonatomic) IBOutlet UILabel *pageText;
+@property (assign, nonatomic) IBOutlet UIPageControl *pageControl;
+@property (assign, nonatomic) IBOutlet UIButton *nextButton;
 @property (strong, nonatomic) NSArray *images;
 @property (strong, nonatomic) NSArray *titles;
 @property (strong, nonatomic) NSArray *texts;
 
-@property (weak, nonatomic) IBOutlet UIButton *doneButton;
-@property (weak, nonatomic) id<WelcomeViewControllerDelegate> delegate;
+@property (assign, nonatomic) IBOutlet UIButton *doneButton;
+@property (assign, nonatomic) id<WelcomeViewControllerDelegate> delegate;
 
 -(IBAction)changePage:(id)sender;
 -(IBAction)nextPage;
