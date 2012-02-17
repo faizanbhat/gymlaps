@@ -6,9 +6,6 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#define submodeHelp 1
-#define submodeSaveHelp 2
-
 #import "WelcomeViewController.h"
 
 @implementation WelcomeViewController
@@ -26,34 +23,11 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.images = [NSArray arrayWithObjects:[UIImage imageNamed:@"wc-page1.png"],[UIImage imageNamed:@"wc-page2.png"],[UIImage imageNamed:@"wc-page3.png"],[UIImage imageNamed:@"wc-page4.png"],nil];
-        self.titles = [NSArray arrayWithObjects:@"Thank you for purchasing Gymlaps",@"Setting Timers", @"Saving Timers", @"Loading Timers",@"That's all", nil];
-        self.texts = [NSArray arrayWithObjects:@"Please take a moment to familiarize yourself with the timer", @"Double tap the screen to choose time intervals and other settings", @"Hold down on the timer name for a split second to save the timer on screen", @"Double tap the timer name to load a saved timer",@"Enjoy your workouts", nil];
+        self.titles = [NSArray arrayWithObjects:@"Thank you for choosing Gymlaps",@"Setting Timers", @"Saving Timers", @"Loading Timers",@"That's all", nil];
+        self.texts = [NSArray arrayWithObjects:@"Please take a moment to familiarize yourself with the timer", @"Double tap different areas of the screen to choose time intervals and other settings", @"Hold down on the timer name for a split second to save the timer on screen", @"Double tap the timer name to load a saved timer",@"Enjoy your workouts", nil];
     }
     
     return self;
-}
-
-- (void)setMode:(int)mode {
-    
-    switch (mode) {
-        case submodeHelp:
-            self.images= [NSArray arrayWithObjects:[UIImage imageNamed:@"wc-page2.png"],[UIImage imageNamed:@"wc-page3.png"],[UIImage imageNamed:@"wc-page4.png"],nil];
-            self.titles = [NSArray arrayWithObjects:@"Setting Timers", @"Saving Timers", @"Loading Timers",@"That's all", nil];
-            self.texts = [NSArray arrayWithObjects:@"Double tap the screen to choose time intervals and other settings", @"Hold down on the timer name for a split second to save the timer on screen", @"Double tap the timer name to load a saved timer",@"Enjoy your workouts", nil];
-
-            break;
-            
-        case submodeSaveHelp:
-            self.images= [NSArray arrayWithObjects:[UIImage imageNamed:@"wc-page3.png"],[UIImage imageNamed:@"wc-page4.png"],nil];
-            self.titles = [NSArray arrayWithObjects: @"Saving Timers", @"Loading Timers",@"That's all", nil];
-            self.texts = [NSArray arrayWithObjects: @"Hold down on the timer name for a split second to save the timer on screen", @"Double tap the timer name to load a saved timer",@"Enjoy your workouts", nil];
-
-            break;
-            
-        default:
-            break;
-    }
-    
 }
 
 - (void)didReceiveMemoryWarning

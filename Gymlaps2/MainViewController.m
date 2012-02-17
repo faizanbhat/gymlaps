@@ -318,7 +318,7 @@
     [UIView setAnimationDuration:0.50];
     saveScreen.alpha = 1.0;    
     [UIView commitAnimations];
-    [whooshSound play];    
+    [whooshSound play];   
 }
 
 - (void)hideSaveScreen{
@@ -544,10 +544,14 @@
         
         screenTimerModified = NO;
         
+        self.setListLabel.textColor = [UIColor blackColor];
+
         beepMode = beepModeBeepHigh;
         alarmMode = alarmMode1sec;
         laps = 0;
         runs=0;
+        
+        self.timerNameTextField.text = @"";
         
         [self refreshScreen];
     }
