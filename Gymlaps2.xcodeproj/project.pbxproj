@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B321ABFC14EECD4400C8779F /* 206.png in Resources */ = {isa = PBXBuildFile; fileRef = B321ABFB14EECD4400C8779F /* 206.png */; };
+		B321ABFE14EECE3400C8779F /* 206_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = B321ABFD14EECE3400C8779F /* 206_selected.png */; };
 		B332E84714E0DBA6006FC0D7 /* IntervalTwoPickerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B332E84614E0DBA6006FC0D7 /* IntervalTwoPickerController.xib */; };
 		B3398DDD14E683D900E4F227 /* TimerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3398DDC14E683D900E4F227 /* TimerCell.m */; };
 		B356CFD414DF3DF9007389CC /* IntervalPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = B356CFD214DF3DF9007389CC /* IntervalPickerController.m */; };
@@ -17,8 +19,6 @@
 		B356CFDF14DF3E1D007389CC /* BeepModePickerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B356CFDD14DF3E1D007389CC /* BeepModePickerController.xib */; };
 		B356CFE314DF3E27007389CC /* AlarmModePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = B356CFE114DF3E27007389CC /* AlarmModePickerController.m */; };
 		B356CFE414DF3E27007389CC /* AlarmModePickerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B356CFE214DF3E27007389CC /* AlarmModePickerController.xib */; };
-		B356DD1114EE46860049720D /* 5-stars.png in Resources */ = {isa = PBXBuildFile; fileRef = B356DD0F14EE46860049720D /* 5-stars.png */; };
-		B356DD1214EE46860049720D /* 5-stars-highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = B356DD1014EE46860049720D /* 5-stars-highlighted.png */; };
 		B356DD1A14EE58A00049720D /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B356DD1914EE58A00049720D /* icon@2x.png */; };
 		B356DD1C14EE58B80049720D /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B356DD1B14EE58B80049720D /* icon.png */; };
 		B37EF7E214DED6DB001A5C03 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B37EF7E114DED6DB001A5C03 /* UIKit.framework */; };
@@ -78,6 +78,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B321ABFB14EECD4400C8779F /* 206.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 206.png; sourceTree = "<group>"; };
+		B321ABFD14EECE3400C8779F /* 206_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 206_selected.png; sourceTree = "<group>"; };
 		B332E84614E0DBA6006FC0D7 /* IntervalTwoPickerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IntervalTwoPickerController.xib; sourceTree = "<group>"; };
 		B3398DDB14E683D900E4F227 /* TimerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerCell.h; sourceTree = "<group>"; };
 		B3398DDC14E683D900E4F227 /* TimerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerCell.m; sourceTree = "<group>"; };
@@ -93,8 +95,6 @@
 		B356CFE014DF3E27007389CC /* AlarmModePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = AlarmModePickerController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		B356CFE114DF3E27007389CC /* AlarmModePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmModePickerController.m; sourceTree = "<group>"; };
 		B356CFE214DF3E27007389CC /* AlarmModePickerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlarmModePickerController.xib; sourceTree = "<group>"; };
-		B356DD0F14EE46860049720D /* 5-stars.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "5-stars.png"; sourceTree = "<group>"; };
-		B356DD1014EE46860049720D /* 5-stars-highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "5-stars-highlighted.png"; sourceTree = "<group>"; };
 		B356DD1914EE58A00049720D /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "../icon@2x.png"; sourceTree = "<group>"; };
 		B356DD1B14EE58B80049720D /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../icon.png; sourceTree = "<group>"; };
 		B37EF7DD14DED6DB001A5C03 /* Gymlaps2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gymlaps2.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -323,8 +323,8 @@
 				B37EF82C14DF2A90001A5C03 /* End.caf */,
 				B37EF82D14DF2A90001A5C03 /* Start.caf */,
 				B3CDB4B414E614D4009402D4 /* Whoosh.caf */,
-				B356DD0F14EE46860049720D /* 5-stars.png */,
-				B356DD1014EE46860049720D /* 5-stars-highlighted.png */,
+				B321ABFB14EECD4400C8779F /* 206.png */,
+				B321ABFD14EECE3400C8779F /* 206_selected.png */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
@@ -461,10 +461,10 @@
 				B3ADBB1714ED0C1700758568 /* wc-page1.png in Resources */,
 				B3ADBB1A14ED0CB400758568 /* wc-button.png in Resources */,
 				B3ADBB1B14ED0CB400758568 /* wc-button-highlighted.png in Resources */,
-				B356DD1114EE46860049720D /* 5-stars.png in Resources */,
-				B356DD1214EE46860049720D /* 5-stars-highlighted.png in Resources */,
 				B356DD1A14EE58A00049720D /* icon@2x.png in Resources */,
 				B356DD1C14EE58B80049720D /* icon.png in Resources */,
+				B321ABFC14EECD4400C8779F /* 206.png in Resources */,
+				B321ABFE14EECE3400C8779F /* 206_selected.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -584,11 +584,19 @@
 		B37EF80814DED6DB001A5C03 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = (
+					armv7,
+					armv6,
+				);
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Faizan Bhat";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Gymlaps2/Gymlaps2-Prefix.pch";
 				INFOPLIST_FILE = "Gymlaps2/Gymlaps2-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "81145B78-D38C-4EF9-902A-D2224C52EFEC";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
